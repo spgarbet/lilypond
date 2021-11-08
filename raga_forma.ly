@@ -64,7 +64,7 @@ guitar = \relative c' {
   r1^\markup{o}
   r4. c4.^\markup{Bb-} r4
   c4.^\markup{Fsus4} c4. r4
-  c4.^\markup{C-6} c4. r4
+  c4.^\markup{C-7} c4.^\markup{C-6} r4
   \improvisationOff
 
   % 2nd variation
@@ -83,24 +83,31 @@ guitar = \relative c' {
   c2) r8 f,( des' c
   bes c bes g~ g f~ f g~ 
   g4) r8 g8~( g f c' a
+  ees g8
   <f,, c' f a c f>4\arpeggio)
 
-  r4 \improvisationOn c''4^\markup{G-b5}-^ \improvisationOff r4
+  r4 \improvisationOn c''4^\markup{A-b5}-^ \improvisationOff r4
+   \improvisationOn c4^\markup{D-}-^ \improvisationOff r4 r8
 
-  <f,, c' f a c f>4.\arpeggio(
+  <f,, c' f a c f>8~\arpeggio(
+  <f c' f a c f>4\arpeggio
   c'''4 f, g8
-  c2) r8 f,( des' c
-  bes c bes g~ g f~ f g~ 
-  g4) r8 g8~( g f c' a
+  c8~ c4.) r8 f,( des' c
+  bes c bes g4 f4 g4~ 
+  g8) r8 g4( f8 c' a
+  ees g8
   <f,, c' f a c f>4\arpeggio)
 
-  r4  \improvisationOn c''4^\markup{C-7}-^ \improvisationOff r4
+  r4  \improvisationOn c''4^\markup{G-b5}-^ \improvisationOff r8 r8
+   \improvisationOn c4^\markup{C-7}-^  \improvisationOff r8 r4
 
-  <f,, c' f a c f>4.\arpeggio(
+  <f,, c' f a c f>4~\arpeggio(
+  <f c' f a c f>8
   c'''4 f, g8
-  c2) r8 f,( des' c
+  c4~) c4 r8 f,( des' c
   bes c bes g~ g f~ f g~ 
   g4) r8 g8~( g f c' a
+  ees g8
 
  
   % Outro
@@ -167,22 +174,27 @@ upper =  \relative c' {
   r4 <c, c'>4. <f f'>4 <g g'>8
   r4 <c, c'>4. <f f'>4 <g g'>8
   r4 <des des'>8 r4 <ees ees'>8 r8 <g g'>8
+  <a a'>4
   <c f a>4\arpeggio
 
-  r4 <g bes des>-^ r
+  r4 <a c ees>-^ r4
+  <d f a>-^ r4 r8
+
+  <c, f a>8~\arpeggio <c f a>8 <c c'>4. <f f'>4 <g g'>8
+  r8 r8 <c, c'>4. <f f'>4 <g g'>8
+  r8 r8 <c, c'>4. <f f'>4 <g g'>8
+  r8 r8 <des des'>8 r4 <ees ees'>8 r8 <g g'>8
+  <a a'>4
+  <c f a>4\arpeggio
+
+  r4 <g bes ees>-^ r8 r8
+  <bes ees g>4-^ r8 r4
 
   <c, f a>4\arpeggio <c c'>4. <f f'>4 <g g'>8
   r4 <c, c'>4. <f f'>4 <g g'>8
   r4 <c, c'>4. <f f'>4 <g g'>8
-  r4 <des des'>8 r4 <ees ees'>8 r8 <g g'>8
-  <c f a>4\arpeggio
-
-  r4 <g bes ees>-^ r
-
-  <c, f a>4\arpeggio <c c'>4. <f f'>4 <g g'>8
-  r4 <c, c'>4. <f f'>4 <g g'>8
-  r4 <c, c'>4. <f f'>4 <g g'>8
-  r4 <des des'>8 r4 <ees ees'>8 r8 <g g'>8
+  r4 <des des'>8 r8 r8 <ees ees'>8 r8 <g g'>8
+  <a a'>4
 
 
   % Outro
@@ -253,22 +265,27 @@ lower = \relative c {
   c,4. f4. g4
   c,4. f4. g4
   c,4. f4. g4
+  a4
   <c f a>4\arpeggio
 
-  r4  <g, f'>4-^ r4 
+  r4  <a ees'>4-^ r4 
+  <d  a'>4-^ r4 r8 
   
-  <c f a>4.\arpeggio f4. g4
+  <c, f a>8~\arpeggio <c f a>4 f4. g4
   c,4. f4. g4
   c,4. f4. g4
   c,4. f4. g4
+  a4
   <c f a>4\arpeggio
   
-  r4  <c, g'>4-^ r4 
+  r4  <g des>4-^ r4 
+  <c, bes'>4-^ r8 r4
 
-  <c f a>4.\arpeggio f4. g4
+  <c f a>4~\arpeggio <c f a>8 f4. g4
   c,4. f4. g4
   c,4. f4. g4
   c,4. f4. g4
+  a4
 
   
   % Outro
@@ -340,22 +357,24 @@ bass = \relative c {
   c4. f r4
   c4. f r4
   bes4. ees,4. r4
-  c'4
+  c'4 a4
  
-  r4 g4-^ r4
+  r4 a,4-^ r4
+  d4-^ r4 r8
 
-  c,4. f r4
-  c4. f r4
+  c8~ c4 f4. r4
+  c4~ c8 f4 r4
   c4. f r4
   bes4. ees,4. r4
-  c'4
+  c'8~ c4 a4
   
-  r4 c4-^ r4 
+  r4 g4-^ r4
+  c4-^ r8 r4
 
   c,4. f r4
   c4. f r4
   c4. f r4
-  bes4. ees,4. r4
+  bes4. ees,4. r4 a4
 
   % Outro
   c,4. f8~ f2
