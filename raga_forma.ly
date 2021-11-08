@@ -101,11 +101,10 @@ guitar = \relative c' {
   c2) r8 f,( des' c
   bes c bes g~ g f~ f g~ 
   g4) r8 g8~( g f c' a
-  %<f,, c' f a c f>4\arpeggio)
 
  
   % Outro
-  r4^\markup{X Outro} f,2 a4~
+  r4^\markup{X Outro}) f,2 a4~
   a4 f'2~ f8 a8~
   a2 bes2
 
@@ -188,8 +187,8 @@ upper =  \relative c' {
 
   % Outro
   r1
-  r2 a2
-  c4~ c4 r8 ees8
+  r2. a4~
+  a4 c2 r8 ees8
   <c f a>1\fermata
 }
 
@@ -270,11 +269,10 @@ lower = \relative c {
   c,4. f4. g4
   c,4. f4. g4
   c,4. f4. g4
-  r4
 
   
   % Outro
-  r4 r8 a4.
+  r2 r8 a4.
   r8 c4.~ c2~
   c1
   <c f a>1\fermata
