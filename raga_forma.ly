@@ -6,6 +6,7 @@
   composer = "Radhika Iyer"
   arranger = "Arranged by Shawn Garbett, Andrew Wampler" 
   tagline  = ""
+  midititle = "raga_forma.midi"
 }
 
 \layout{
@@ -412,6 +413,7 @@ bass = \relative c {
       >>
     >>
   >>
+  \midi{}
 }
 
 
