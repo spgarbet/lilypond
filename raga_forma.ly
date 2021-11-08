@@ -44,6 +44,7 @@ guitar = \relative c' {
   c,,4^\markup {o} c'4. f4 g8
   r4 bes,8 c4 f8 g4
 
+  % Chalan
   des'4.^\markup {X \italic Chalan \fontsize #-2 {(pulse doubles)}}( c4 f, g8
   c2) r8 f,( des' c
   bes c bes g~ g f~ f g~ 
@@ -77,20 +78,34 @@ guitar = \relative c' {
   c,4 g'8 c~ c a c ees
   f,,4 c'8 f~ f c ees g 
 
-  % Tihaai
-  <f, c' f a c f>4.\arpeggio^\markup{X Tihaai} c''4 f4 g8
-  c4 a,8 c4 f8 a4
-  <f,, c' f a c f>4\arpeggio r4 \improvisationOn c''4^\markup{G-b5}-^ \improvisationOff r4
+  % Tihai
+  <f, c' f a c f>4.\arpeggio^\markup {X \italic Tihai}( c'''4 f, g8
+  c2) r8 f,( des' c
+  bes c bes g~ g f~ f g~ 
+  g4) r8 g8~( g f c' a
+  <f,, c' f a c f>4\arpeggio)
 
-  <f,, c' f a c f>4.\arpeggio c''4 f4 g8
-  c4 a,8 c4 f8 a4
-  <f,, c' f a c f>4\arpeggio r4 \improvisationOn c''4^\markup{C-7}-^ \improvisationOff r4
+  r4 \improvisationOn c''4^\markup{G-b5}-^ \improvisationOff r4
 
-  <f,, c' f a c f>4.\arpeggio c''4 f4 g8
-  c4 a,8 c4 f8 a4
+  <f,, c' f a c f>4.\arpeggio(
+  c'''4 f, g8
+  c2) r8 f,( des' c
+  bes c bes g~ g f~ f g~ 
+  g4) r8 g8~( g f c' a
+  <f,, c' f a c f>4\arpeggio)
+
+  r4  \improvisationOn c''4^\markup{C-7}-^ \improvisationOff r4
+
+  <f,, c' f a c f>4.\arpeggio(
+  c'''4 f, g8
+  c2) r8 f,( des' c
+  bes c bes g~ g f~ f g~ 
+  g4) r8 g8~( g f c' a
+  %<f,, c' f a c f>4\arpeggio)
+
  
   % Outro
-  c,,4^\markup{X Outro} f2 a4~
+  r4^\markup{X Outro} f,2 a4~
   a4 f'2~ f8 a8~
   a2 bes2
 
@@ -148,22 +163,33 @@ upper =  \relative c' {
   g4. ees8~ ees des4 c8~
   c4 f,8 a~ a c4 bes8
 
-  % Tihaai
+  % Tihai
   <c, f a>4\arpeggio <c c'>4. <f f'>4 <g g'>8
+  r4 <c, c'>4. <f f'>4 <g g'>8
+  r4 <c, c'>4. <f f'>4 <g g'>8
   r4 <des des'>8 r4 <ees ees'>8 r8 <g g'>8
-  <c, f a>4\arpeggio r4 <g' bes ees>4-^ r4
+  <c f a>4\arpeggio
+
+  r4 <g bes des>-^ r
 
   <c, f a>4\arpeggio <c c'>4. <f f'>4 <g g'>8
+  r4 <c, c'>4. <f f'>4 <g g'>8
+  r4 <c, c'>4. <f f'>4 <g g'>8
   r4 <des des'>8 r4 <ees ees'>8 r8 <g g'>8
-  <c, f a>4\arpeggio r4 <bes ees g>4-^ r4
+  <c f a>4\arpeggio
 
-  <c f a>4\arpeggio <c c'>4. <f f'>4 <g g'>8
+  r4 <g bes ees>-^ r
+
+  <c, f a>4\arpeggio <c c'>4. <f f'>4 <g g'>8
+  r4 <c, c'>4. <f f'>4 <g g'>8
+  r4 <c, c'>4. <f f'>4 <g g'>8
   r4 <des des'>8 r4 <ees ees'>8 r8 <g g'>8
+
 
   % Outro
   r1
-  r2. a4~
-  a4 c2 r8 ees8
+  r2 a2
+  c4~ c4 r8 ees8
   <c f a>1\fermata
 }
 
@@ -226,17 +252,29 @@ lower = \relative c {
   % Tihaai
   <c f a>4.\arpeggio f4. g4
   c,4. f4. g4
-  <c, f a>4\arpeggio r4 <g f'>-^ r4
+  c,4. f4. g4
+  c,4. f4. g4
+  <c f a>4\arpeggio
+
+  r4  <g, f'>4-^ r4 
+  
+  <c f a>4.\arpeggio f4. g4
+  c,4. f4. g4
+  c,4. f4. g4
+  c,4. f4. g4
+  <c f a>4\arpeggio
+  
+  r4  <c, g'>4-^ r4 
 
   <c f a>4.\arpeggio f4. g4
   c,4. f4. g4
-  <c, f a>4\arpeggio r4 <c g'>-^ r4
-
-  <c f a>4.\arpeggio f4. g4
   c,4. f4. g4
+  c,4. f4. g4
+  r4
+
   
   % Outro
-  c,2 r8 a'4.
+  r4 r8 a4.
   r8 c4.~ c2~
   c1
   <c f a>1\fermata
@@ -277,6 +315,7 @@ bass = \relative c {
   des,8 des' des ees, ees' ees des, des'
   c,4 bes8 c ~ c f g4
 
+  % 1st Variation
   des'4.( c4 f, g8
   c2) r8 f, des' c
   bes8 c bes g~ g f~ f g~
@@ -300,14 +339,24 @@ bass = \relative c {
 
   % Tihaai
   c4. f r4
+  c4. f r4
+  c4. f r4
   bes4. ees,4. r4
-  c4 r4 g'4-^ r4
+  c'4
+ 
+  r4 g4-^ r4
 
   c,4. f r4
+  c4. f r4
+  c4. f r4
   bes4. ees,4. r4
-  c4 r4 c'4-^ r4
+  c'4
+  
+  r4 c4-^ r4 
 
   c,4. f r4
+  c4. f r4
+  c4. f r4
   bes4. ees,4. r4
 
   % Outro
