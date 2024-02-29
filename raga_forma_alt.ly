@@ -90,10 +90,11 @@ guitar = \relative c' {
   ees g8
   <f,, c' f a c f>4\arpeggio)
 
-  r4 <a ees' a c>4^\markup{A-b5}-^  r4
-  <d a' d f>4^\markup{D-}-^  r4 r8
+  %r4 <a ees' a c>4^\markup{A-b5}-^  r4
+  %<d a' d f>4^\markup{D-}-^  r4 r8
+  r2 <bes g' des' g>4^\markup{G-b5}-^ r2 r8
 
-  <f, c' f a c f>8~\arpeggio(
+  <f c' f a c f>8~\arpeggio(
   <f c' f a c f>4\arpeggio
   c'''4 f, g8
   c8~ c4.) r8 f,( des' c
@@ -102,10 +103,12 @@ guitar = \relative c' {
   ees g8
   <f,, c' f a c f>4\arpeggio)
 
-  r4  <bes g' des' g>4^\markup{G-b5}-^ r8 r8
-  <c g' bes ees g>4^\markup{C-7}-^  r8 r4
+  %r4  <bes g' des' g>4^\markup{G-b5}-^ r8 r8
+  %<c g' bes ees g>4^\markup{C-7}-^  r8 r4
+  r2 <c g' bes ees g>8^\markup{C-7}-^ ~ <c g' bes ees g>8
+  r8 r2
 
-  <f, c' f a c f>4~\arpeggio(
+  <f c' f a c f>4~\arpeggio(
   <f c' f a c f>8
   c'''4 f, g8
   c4~) c4 r8 f,( des' c
@@ -181,8 +184,9 @@ upper =  \relative c' {
   <a a'>4
   <c f a>4\arpeggio
 
-  r4 <a c ees>-^ r4
-  <d f a>-^ r4 r8
+  %r4 <a c ees>-^ r4
+  %<d f a>-^ r4 r8
+  r2 <g bes ees>4-^ r2 r8
 
   <c, f a>8~\arpeggio <c f a>8 <c c'>4. <f f'>4 <g g'>8
   r8 r8 <c, c'>4. <f f'>4 <g g'>8
@@ -191,8 +195,9 @@ upper =  \relative c' {
   <a a'>8~ <a a'>
   <c f a>4\arpeggio
 
-  r4 <g bes ees>-^ r8 r8
-  <bes ees g>4-^ r8 r4
+  %r4 <g bes ees>-^ r8 r8
+  %<bes ees g>4-^ r8 r4
+  r2 <bes ees g>8~-^ <bes ees g> r8 r2
 
   <c, f a>4\arpeggio <c c'>4. <f f'>4 <g g'>8
   r4 <c, c'>4. <f f'>4 <g g'>8
@@ -272,8 +277,10 @@ lower = \relative c {
   a4
   <c f a>4\arpeggio
 
-  r4  <a ees'>4-^ r4 
-  <d  a'>4-^ r4 r8 
+  %r4  <a ees'>4-^ r4 
+  %<d  a'>4-^ r4 r8 
+  r2 <g des>4-^ r2 r8
+  
   
   <c, f a>8~\arpeggio <c f a>4 f4. g4
   c,8~ c4 f4. g4
@@ -282,8 +289,9 @@ lower = \relative c {
   a8~ a8
   <c f a>4\arpeggio
   
-  r4  <g des>4-^ r8 r8
-  <c, bes'>4-^ r8 r4
+  %r4  <g des>4-^ r8 r8
+  %<c, bes'>4-^ r8 r4
+  r2 <c, bes'>8~-^ <c bes'> r8 r2
 
   <c f a>4~\arpeggio <c f a>8 f4. g4
   c,4~ c8 f4. g4
@@ -363,8 +371,9 @@ bass = \relative c {
   bes4. ees,4. r4
   c'4 a4
  
-  r4 a,4-^ r4
-  d4-^ r4 r8
+  %r4 a,4-^ r4
+  %d4-^ r4 r8
+  r2 g4-^ r2 r8
 
   c8~ c4 f4. r4
   c8~ c4 f4. r4
@@ -372,8 +381,9 @@ bass = \relative c {
   bes8~ bes4 ees,4. r8 r8
   c'8~ c8 a4
   
-  r4 g4-^ r4
-  c4-^ r8 r4
+  %r4 g4-^ r4
+  %c4-^ r8 r4
+  r2 c8~-^ c r8 r2
 
   c,4. f r4
   c4. f r4
