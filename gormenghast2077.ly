@@ -4,7 +4,7 @@
   title = "Gormenghast 2077"
   subtitle = "Sonata No. 1 in C sharp minor"
   composer = "Shawn Garbett"
-  tagline  = ""
+  tagline  = "Copyright 2026 Shawn Garbett"
 }
 
 harmony = \relative c''''
