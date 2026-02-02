@@ -48,36 +48,28 @@ harmony = \relative c''''
   r4
   gis8-> fis gis a cis4 |
 
-  \ottava -1
+  \repeat volta 2 { \ottava -1
+
   <e,, fis gis cis>8.  <e fis gis cis>8.  <e fis gis cis>8  <e fis gis cis>4 r \bar "!"
   <e fis gis cis>8.  <e fis gis cis>8.  <e fis gis cis>8  <e fis gis cis>4 r \bar "!"
   <fis gis ais dis>8.  <fis gis ais dis>8.  <fis gis ais dis>8  <fis gis ais dis>4 r |
   \ottava 1
   
-  \autoBeamOff \stemDown fis''8-.( cis'-. \autoBeamOn \stemUp fis8-. a-. cis-.
-    \tuplet 3/2 {dis-. e-. fis^"l.h."-.)} r8 \bar "!"
-  \autoBeamOff \stemDown fis,,8-.( cis'-. \autoBeamOn \stemUp fis8-. ais-. cis-.
-    \tuplet 3/2 {dis-. e-. fis^"l.h."-.)} r8 \bar "!"
-  \autoBeamOff \stemDown b,,8-.( fis'-. \autoBeamOn \stemUp b8-. dis-. fis-.
-    \tuplet 3/2 {gis-. ais-. b^"l.h."-.)} r8 |
-  
-%  \autoBeamOff \stemDown cis,,,8-.( gis'-. \autoBeamOn \stemUp cis8-. e-. gis-.
-%    \tuplet 3/2 {ais-. bis-. cis^"l.h."-.)} r8 \bar "!"
-%  \autoBeamOff \stemDown fis,,8-.( cis'-. \autoBeamOn \stemUp fis8-. ais-. cis-.
-%    \tuplet 3/2 {dis-. e-. fis^"l.h."-.)} r8 \bar "!"
-%  \autoBeamOff \stemDown gis,,8-.( dis'-. \autoBeamOn \stemUp gis8-. bis-. dis-.
-%    \tuplet 3/2 {e-. fis-. gis^"l.h."-.)} r8 |
+  \autoBeamOff \stemDown fis''8(^\markup {\italic pizz.} cis' \autoBeamOn \stemUp fis8 a cis
+    \tuplet 3/2 {dis e fis^"l.h.")} r8 \bar "!"
+  \autoBeamOff \stemDown fis,,8( cis' \autoBeamOn \stemUp fis8 ais cis
+    \tuplet 3/2 {dis e fis^"l.h.")} r8 \bar "!"
+  \autoBeamOff \stemDown b,,8( fis' \autoBeamOn \stemUp b8 dis fis
+    \tuplet 3/2 {gis ais b^"l.h.")} r8 |
 
-%  r1
-%  r1
-%  r1
+  \ottava 0 }
 
-%  \autoBeamOff \stemDown dis,,8-.( ais'-. \autoBeamOn \stemUp dis8-. fis-. ais-.
-%    \tuplet 3/2 {bis-. cis-. dis^"l.h."-.)} r8 \bar "!"
-%  \autoBeamOff \stemDown gis,,8-.( dis'-. \autoBeamOn \stemUp gis8-. bis-. dis-.
-%    \tuplet 3/2 {e-. fis-. gis^"l.h."-.)} r8 \bar "!"
-%  \autoBeamOff \stemDown cis,,,8-.( gis'-. \autoBeamOn \stemUp cis8-. e-. gis-.
-%    \tuplet 3/2 {ais-. bis-. cis^"l.h."-.)} r8 \bar "||"
+  % Subordinate theme
+  \repeat volta 2 {
+  e,,,,4( b dis8 e fis e \bar "!" 
+  fis8) r gis4( fis e \bar "!"
+  a,2 e') |
+  }
 
 }
 
@@ -87,7 +79,7 @@ melody = \relative c'' {
   \time 4/4
 
   %% Main Sentence
-  cis2\>^"X"-^ gis^"0"\! \bar  "!"
+  cis2\>^"X"-^^\markup {\italic melancholic} gis^"0"\! \bar  "!"
   dis4^"2"\>-> cis bis^"0"\! r8 cis\< \bar "!"
   dis8^"3" cis dis e gis4^"4" dis |
 
@@ -120,36 +112,19 @@ melody = \relative c'' {
 
    \ottava -1
    
-   b,,,16-^ b b b-> b b b-> b b4 r \bar "!"
-   b16-^ b b b-> b b b-> b b4 r \bar "!"
-   cis16-^ cis cis cis-> cis cis cis-> cis cis4 r |
+   b,,,16-^^\markup {\italic Agitato} b b b-> b b b-> b b4-^ r \bar "!"
+   b16-^ b b b-> b b b-> b b4-^ r \bar "!"
+   cis16-^ cis cis cis-> cis cis cis-> cis cis4-^ r |
    
    \ottava 0
 
-   r1 r r
+   r1^\markup{\italic delicately} r r
 
+   %% Subordinate Theme in E
 
-%  gis,,,16-^ gis gis gis-> gis gis gis-> gis gis4 r \bar "!"
-%  gis16-^ gis gis gis-> gis gis gis-> gis gis4 r \bar "!"
-%  ais16-^ ais ais ais-> ais ais ais-> ais ais4 r |
-%
-%  \ottava 0
-%
-%  r1 \bar "!"
-%  r1 \bar "!"
-%  r1 |
-%
-%  \ottava -1
-
-%  gis16-^ gis gis gis-> gis gis gis-> gis gis4 r \bar "!"
-%  gis16-^ gis gis gis-> gis gis gis-> gis gis4 r \bar "!"
-%  ais16-^ ais ais ais-> ais ais ais-> ais ais4 r |
-%
-%  \ottava 0
-%
-%  r1 \bar "!"
-%  r1 \bar "!"
-%  r1 |
+   b8' b' b, b' b, b' r4 \bar "!"
+   b8, b' b, b' b, b' r4 \bar "!"
+   \tuplet 3/2 {a8, a' a, a' a, a'} b,8-.  r4 |
 }
 
 
@@ -187,21 +162,11 @@ chordnames = \chordmode {
   fis1:7
   b
 
-%  r1
-%  r1
-%  r1
-%
-%  cis1:m
-%  fis1
-%  gis1
-%
-%  r1
-%  r1 
-%  r1
-% 
-%  dis1:m
-%  gis1
-%  cis1:m
+  % Subordinate theme
+  e/b1
+  e/b1
+  e/a1
+
 }
 
 % It+6 is #V7 with no 5th
