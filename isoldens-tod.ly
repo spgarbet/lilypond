@@ -10,7 +10,7 @@
   \context { \ChordNames
     \override ChordName #'font-size = #0.5
   }
-  #(layout-set-staff-size 16)  
+  #(layout-set-staff-size 18)  
 }
 
 
@@ -403,6 +403,21 @@ ped = \sustainOff\sustainOn
        s2 s8 dis'8 cis8. b16
        s2 s8 gis'8 fis8. e16
        s1
+
+       s1
+       <dis, fis>2 <cis e>
+       <dis fis>2 <cis e>
+       <dis fis>1
+
+       <cis_~ e_~ fis>2 <cis e>
+       s1
+       << {\voiceOne dis'8^\markup{\italic m.s.}\arpeggio  s2. s8} \new Voice { \voiceTwo dis,1\arpeggio} >>
+       <e g e'>1\arpeggio 
+       
+       <dis b' dis fis>1\arpeggio
+       \ottava 1 dis''8 \ottava 0 r8 r4 r2
+       <b,, dis fis b dis fis>1\arpeggio\fermata \bar "|."
+
      }
      \new Voice = "second" \relative
      { \voiceTwo \stemDown 
@@ -537,6 +552,20 @@ ped = \sustainOff\sustainOn
        
        s16 e,32 g b e \tuplet 5/2 {g e b g e} s16 b32 e g b \tuplet 5/2 {e b g e b} s16
          g32 b e g \tuplet 5/2 {b g e b g} s16 \tuplet 3/2 {e32 g b} cis32_4 e_1 g cis
+       <cis, cis'>8^( <b b'> <ais ais'>8. <gis gis'>16 <gis gis'>8 <fis fis'>)
+         \tuplet 3/2 {<fisis fisis'>^( <gis gis'> <ais ais'>}
+       <cis cis'>8 <b b'> <ais ais'>8. <gis gis'>16 <gis gis'>8 <fis fis'>8)
+         \tuplet 3/2 {fisis8^1( gis^1 ais^1}
+       cis4_2 b ais4. gis8
+ 
+       gis4 fis) \tuplet 3/2 {<fisis fisis'>4^( <gis gis'> <ais ais'>}
+       <cis dis~ fis~ cis'>2\arpeggio <b dis fis b>4. <cis cis'>8
+       <gis gis'>2.\arpeggio) <a a'>4
+       <ais ais'>4\arpeggio <b b'>2 <cis cis'>4
+
+       s2 ais'16\rest \stemUp b, dis fis b dis fis b \stemDown 
+       fis8 s8 s2.
+       s1
      }
   >>
   \new Staff = "LH" <<
@@ -646,7 +675,20 @@ ped = \sustainOff\sustainOn
       <e,,, e'>8\sustainOn <e' b'>16_2_5 <g e'> s2 \clef treble <b' g'>16 <e b'> <g e'> <b g'>
 
       \tuplet 3/2 {e,32 g b} s8 s16 \tuplet 3/2 {b,32 e g} s8 s16
-        \tuplet 3/2 {g,32 b e} s8 s16 \clef bass \tuplet 3/2 {e,32 g b} \clef treble s8
+        \tuplet 3/2 {g,32 b e} s8 s16 \clef bass \tuplet 3/2 {e,32 g b} \clef treble s8.
+      <b,, fis'>16 b' dis fis s4 s4 e'4
+      <b,, fis'>16 b' dis fis s2 e'4
+      \tuplet 3/2 {<b,, fis'>8 b' dis} s2.
+
+      <b fis'>8 b' cis e~\sustainOff e2 
+      s1
+      s1
+      s2 \repeat tremolo 8 { <e, g b>32 e'}
+
+      s16 <b,, fis'> b' dis fis b \stemDown \change Staff="RH" dis fis 
+        b dis, fis b dis fis b dis
+      \change Staff="LH" s1
+      <fis,,, b dis fis>1\arpeggio\fermata
     }
     \new Voice = "forth" \relative
     { \voiceFour \stemDown 
@@ -746,7 +788,23 @@ ped = \sustainOff\sustainOn
       s4^\markup{\italic "siempre raddolcendo"} s4\ped <e' gis cis>8 <e gis b> <b e gis> <e gis b>
       s2\ped <e b'>8 <gis b e> <e gis b> <b e gis>
       s4 <b g'>16_2_5 <e b'> <g e'> <b g'> <e b'>^2^1 <b, g'> <e b'> <g e'> s4
-      s2. s8 e'16. r32
+
+      s2. s8 cis''16. r32 \clef bass
+      s4^\markup{\italic dolciss.}\ped b,,16 dis fis,\sustainOff r <b, fis'>\sustainOn b'_1~ <b~ cis~>_3 <b cis~ e>
+        <ais cis e>8 <fis cis'>\sustainOff
+      s4\sustainOn b16 dis fis,\sustainOff r <b, fis'>\sustainOn b'_1~ <b~ cis~>_3 <b cis~ e>
+        <ais cis e>8\ped <fis cis'>\ped
+      s4\ped \tuplet 3/2 {fis8 b dis} \tuplet 3/2 {fis,8\ped <dis' fis> r} r4
+
+      s8\ped b8~ b4 \tuplet 3/2 {ais4 cis fis,\sustainOn}
+      \stemUp <b, b,>4(\ped \stemDown <dis b'> <fis dis'> <dis' fis>)
+      <b, eis gis dis'>8\arpeggio\ped \repeat tremolo 4 {<eis b'>32. dis'}
+        \repeat tremolo 8 {<eis, b'>32\ped dis'}  
+      \repeat tremolo 8 {<e, g b>32\ped e'} b,,4\ped_\markup{\italic m.d.} s4
+ 
+      <dis' fis b dis>8\ped s8 s2. 
+      r2 \ottava -1 <b,, b'>8 \ottava 0 r8 r4 
+      s1
    }
   >>
 >>
