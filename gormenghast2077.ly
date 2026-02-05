@@ -7,13 +7,13 @@
   tagline  = "Copyright 2026 Shawn Garbett"
 }
 
-harmony = \relative c''''
+harmony = \relative c'''
 {
   \tempo "Moderate Chautal" 4 = 90
   \key cis \minor
   \clef treble
   \time 4/4
-  \ottava #2
+  \ottava 1 
 
   % Basic Idea
   <cis e   gis>1 \bar "!"
@@ -37,12 +37,13 @@ harmony = \relative c''''
 
   \ottava 0
 
-  cis,,2 r \bar "!"
+  %cis,2 r \bar "!"
+  r1 \bar "!"
   r1 \bar "!"
   r1 |
 
   %% Repetition / Tihai into Cadence
-  a8-> gis a b dis4 b8-.->
+  a,8-> gis a b dis4 b8-.->
   r8 \bar "!" r8
   a8-> gis a b dis4 b8-.-> \bar "!"
   r4
@@ -53,10 +54,10 @@ harmony = \relative c''''
   <e,, fis gis cis>8.  <e fis gis cis>8.  <e fis gis cis>8  <e fis gis cis>4 r \bar "!"
   <e fis gis cis>8.  <e fis gis cis>8.  <e fis gis cis>8  <e fis gis cis>4 r \bar "!"
   <fis gis ais dis>8.  <fis gis ais dis>8.  <fis gis ais dis>8  <fis gis ais dis>4 r |
-  \ottava 1
+  \ottava 2
   
-  \autoBeamOff \stemDown fis''8(^\markup {\italic pizz.} cis' \autoBeamOn \stemUp fis8 a cis
-    \tuplet 3/2 {dis e fis^"l.h.")} r8 \bar "!"
+  \autoBeamOff \stemDown cis'''8(^\markup {\italic pizz.} fis \autoBeamOn \stemUp cis'8 fis a 
+    \tuplet 3/2 {b cis fis^"l.h.")} r8 \bar "!"
   \autoBeamOff \stemDown fis,,8( cis' \autoBeamOn \stemUp fis8 ais cis
     \tuplet 3/2 {dis e fis^"l.h.")} r8 \bar "!"
   \autoBeamOff \stemDown b,,8( fis' \autoBeamOn \stemUp b8 dis fis
@@ -66,20 +67,23 @@ harmony = \relative c''''
 
   % Subordinate theme
   \repeat volta 2 {
-  e,,,,4( b dis8 e fis e \bar "!" 
+  e,,,,,4( b dis8 e fis e \bar "!" 
   fis8) r gis4( fis e \bar "!"
   a,2 e') |
   }
 
+  e4( b dis8 e fis e \bar "!" 
+  fis8) r gis4( fis e \bar "!"
+
 }
 
-melody = \relative c'' {
+melody = \relative c' {
   \key cis \minor
-  \clef treble
+  \clef bass
   \time 4/4
 
   %% Main Sentence
-  cis2\>^"X"-^^\markup {\italic melancholic} gis^"0"\! \bar  "!"
+  cis2\>^"X"-^^\markup {\italic gremendo} gis^"0"\! \bar  "!"
   dis4^"2"\>-> cis bis^"0"\! r8 cis\< \bar "!"
   dis8^"3" cis dis e gis4^"4" dis |
 
@@ -97,8 +101,7 @@ melody = \relative c'' {
   a8 gis4 r8 gis8 ais8 bis4  | 
 
   %% Transition
-  \clef bass
-  gis,2-^ dis \bar  "!"
+  <gis cis>2-^ dis \bar  "!"
   a4-> gis fis r8 gis \bar "!"
   ais8 gis ais bis dis4 gis, |
 
@@ -112,19 +115,22 @@ melody = \relative c'' {
 
    \ottava -1
    
-   b,,,16-^^\markup {\italic Agitato} b b b-> b b b-> b b4-^ r \bar "!"
+   b,,,16-^^\markup {\italic feroce} b b b-> b b b-> b b4-^ r \bar "!"
    b16-^ b b b-> b b b-> b b4-^ r \bar "!"
    cis16-^ cis cis cis-> cis cis cis-> cis cis4-^ r |
    
    \ottava 0
 
-   r1^\markup{\italic delicately} r r
+   r1^\markup{\italic {freddo}} r r
 
    %% Subordinate Theme in E
 
-   b8' b' b, b' b, b' r4 \bar "!"
-   b8, b' b, b' b, b' r4 \bar "!"
-   \tuplet 3/2 {a8, a' a, a' a, a'} b,8-.  r4 |
+   b'8^\markup{\italic {con moto}} b' b, b' b, b' b, b' \bar "!"
+   b,8 b' b, b' b, b' b, b' \bar "!"
+   \tuplet 3/2 {a,8 a' a, a' a, a'} a,8-.  r4. |
+
+   b8 b' b, b' b, b' b, b' \bar "!"
+   b,8 b' b, b' b, b' b, b' \bar "!"
 }
 
 
@@ -154,18 +160,30 @@ chordnames = \chordmode {
   a4:7/e fis:m7 b e4.
   e4/gis fis:m fis:7 
 
-  b1:13
-  b1:13
-  cis1:13
+  b1:11
+  b1:11
+  cis1:11
 
   fis1:m
   fis1:7
   b
 
   % Subordinate theme
-  e/b1
-  e/b1
-  e/a1
+  e1/b
+  e1/b
+  e1/a
+
+  e1/b
+  e1/b
+  e2/b b/dis
+
+  e2 ais:m/b
+  b2 ais:m/b
+  b2 fis:dim
+
+  e2/b b/dis
+  e2/b dis
+  e2 fis:dim 
 
 }
 
