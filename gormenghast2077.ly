@@ -5,6 +5,7 @@
   subtitle = "Sonata No. 1 in C sharp minor"
   composer = "Shawn Garbett"
   tagline  = "Copyright 2026 Shawn Garbett"
+  midititle= "gormenghast2077.midi"
 }
 
 harmony = \relative c'''
@@ -154,6 +155,7 @@ melody = \relative c' {
 
    \ottava -1
    
+   \repeat volta 2 {
    b,,,16^\markup {\italic feroce} b b b-> b b b-> b b4-^ r \bar "!"
    b16-^ b b b-> b b b-> b b4-^ r \bar "!"
    cis16-^ cis cis cis-> cis cis cis-> cis cis4-^ r |
@@ -161,12 +163,15 @@ melody = \relative c' {
    \ottava 0
 
    r1^\markup{\italic {freddo}} r r
+   }
 
    %% Subordinate Theme in E
 
+   \repeat volta 2 {
    b'8^\markup{\italic {crescendo con moto}}^\mp b' b, b' b, b' b, b' \bar "!"
    b,8 b' b, b' b, b' b, b' \bar "!"
    \tuplet 3/2 {a,8 a' a, a' a, a'} a,8-.  r4. |
+   }
 
    b8^\ff b' b, b' b, b' b, b' \bar "!"
    b,8 b' b, b' a b a b \bar "!"
@@ -186,6 +191,7 @@ melody = \relative c' {
    \tuplet 3/2 {e,8 e' b e e, e' } fis,8-. r8 r4  |
 
    % Cadential (evaded)
+   \repeat volta 2 {
    gis4^\markup{\italic zeloso} b2 e4 \bar "!" 
    gis,4 b2 e4 \bar "!" 
    a,4 cis2 fis4 |
@@ -193,6 +199,7 @@ melody = \relative c' {
    fis,4 b2 dis4 \bar "!"
    fis8 r gis4( fis e \bar "!"
    b2 a)  |
+   }
 
    % Codetta
    e4^\markup{\italic{con espressione}} e' r <ais, cis e gis>-. \bar "!"
@@ -232,6 +239,7 @@ chordnames = \chordmode {
   a4:7/e fis:m7 b e4.
   e4/gis fis:m fis:7 
 
+  \repeat volta 2{
   b1:11
   b1:11
   cis1:11
@@ -239,11 +247,14 @@ chordnames = \chordmode {
   fis1:m
   fis1:7
   b
+  }
 
   % Subordinate theme
+  \repeat volta 2 {
   e1/b
   e1/b
   e1/a
+  }
 
   e1/b
   e1/b % New Motive introduction
@@ -262,6 +273,7 @@ chordnames = \chordmode {
   e2 b  
 
   % Cadential, ECP
+  \repeat volta 2 {
   e1/gis
   e1/gis
   fis1:m/a
@@ -269,6 +281,7 @@ chordnames = \chordmode {
   b1/fis
   b/fis
   b1:7
+  }
 
   e2 ais:dim7 
   b/fis b:7
@@ -288,7 +301,7 @@ chordnames = \chordmode {
 % In Db It+6 is G6  G  A    Db  (inverted starting on A)
 % In Db Fr+6 is G6  G  A  B Db  
 
-\score {
+theMusic = {
   <<
     \new ChordNames {
       \set chordChanges = ##t
@@ -300,5 +313,13 @@ chordnames = \chordmode {
     \new Staff \harmony
     \new Staff \melody
   >>
+}
+
+\score {
+  \theMusic
   \layout {}
+}
+\score {
+  \unfoldRepeats{ \theMusic }
+  \midi {}
 }
