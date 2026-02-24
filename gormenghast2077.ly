@@ -95,13 +95,13 @@ harmony = \relative c'''
  
   % Cadential (evaded)
   \repeat volta 2 {
-  r8 e' e' dis d cis b dis \bar "!"
-  ais gis a fis e f dis cis \bar "!"
-  a gis fis e fis e fis e |
+  r8 e' e' dis-3 d-1 cis-3 b-1 dis-5 \bar "!"
+  ais-3 gis-2 a-3 fis-2 e-1 f-4 dis cis \bar "!"
+  a-1 gis-3 fis e fis e fis e |
 
-  fis b dis cis d dis e f \bar "!" 
-  fis gis fis gis ais gis a fis \bar "!"
-  e f dis cis a gis fis4 |
+  fis b-1 dis-3 cis d-1 dis-2 e-1 f \bar "!" 
+  fis-3 gis-4 fis-2 gis-3 ais gis a fis \bar "!"
+  e f dis cis a-1 gis-3 fis4 |
   }
 
   gis8 fis gis a r4 gis \bar "!"
@@ -178,8 +178,8 @@ melody = \relative c' {
    gis8^\mf b gis b fis b fis b |
 
    e, b' e, b' e, b' e, b'  \bar "!" 
-   cis, a' e a cis, a' e a  \bar "!"    
-   b, b' dis, b' cis, a' e a |
+   cis, ais' e ais cis, ais' e ais  \bar "!"    
+   b, b' dis, b' cis, ais' e ais |
 
    b, b' dis, b' b, b' dis, b' \bar "!"
    a fis' c fis a, fis' c fis \bar "!"
@@ -187,7 +187,6 @@ melody = \relative c' {
 
    gis, e' b e gis, e' b e \bar "!"
    dis, dis' b dis dis, dis' b dis \bar "!" 
-   % e, e' b e fis,-. r4. %fis' b, fis' |
    \tuplet 3/2 {e,8 e' b e e, e' } fis,8-. r8 r4  |
 
    % Cadential (evaded)
