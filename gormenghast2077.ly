@@ -10,7 +10,7 @@
 
 harmony = \relative c'''
 {
-  \tempo "Moderate Chautal 12/4" 4 = 90 
+  \tempo "Gemendo" 4 = 90 
   \key cis \minor
   \clef treble
   \time 4/4
@@ -114,7 +114,7 @@ harmony = \relative c'''
   r4 e dis r^\fermata |
 
   <a' dis b' >1\>
-  <e gis b e>4\! r2. \bar "||"
+  <gis b e>4\! r2. \bar "."
 }
 
 melody = \relative c' {
@@ -123,7 +123,7 @@ melody = \relative c' {
   \time 4/4
 
   %% Main Sentence
-  cis2\>^"X"-^^\markup {\italic gremendo} gis^"0"\! \bar  "!"
+  cis2\>^"X"-^^\markup {\italic {played as chautal 12/4}} gis^"0"\! \bar  "!"
   dis4^"2"\>-> cis bis^"0"\! r8 cis\< \bar "!"
   dis8^"3" cis dis e gis4^"4" dis |
 
@@ -210,7 +210,7 @@ melody = \relative c' {
    r4 <fis b dis>-. r <fis cis' e>-.\!^\ppp |
 
    <e' fis a b dis>1^\ff |
-   <e gis b>4^\p r2. \bar "||"
+   <e gis b e>4^\p r2. \bar "."
 }
 
 chordnames = \chordmode {
@@ -300,7 +300,7 @@ chordnames = \chordmode {
 % In Db It+6 is G6  G  A    Db  (inverted starting on A)
 % In Db Fr+6 is G6  G  A  B Db  
 
-theMusic = {
+theExposition = {
   <<
     \new ChordNames {
       \set chordChanges = ##t
@@ -315,10 +315,128 @@ theMusic = {
 }
 
 \score {
-  \theMusic
+  \theExposition
   \layout {}
 }
 \score {
-  \unfoldRepeats{ \theMusic }
+  \unfoldRepeats{ \theExposition }
   \midi {}
 }
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%
+%% Development
+%%
+devchordnames = \chordmode {
+  e2.
+  e2.
+  b2./dis
+  b2./dis
+  e2.
+  b2./dis
+
+  a2.:dim
+  ais2.:m
+  dis2.:7
+  d2.:7 
+  dis4./ais dis4.:7
+  gis:m
+}
+
+dev_treble = \relative c''
+{
+  \tempo "Allegro" 4. = 140
+  \key b \major
+  \clef treble
+  \time 6/8
+
+  %%%%%%%%%%%%%%%%
+  % pre-core
+  e1*6/8-^    |
+  b1*6/8      |
+  fis4.-> e4. |  
+  dis4. r8 e8 fis |
+  e8 fis e fis gis4 |
+  b4.fis4. 
+  
+  dis1*6/8-^    |
+  ais'1*6/8      |
+  f4.-> dis4. |  
+  d4. r8 dis8 f |
+  dis8 f dis f g4 |
+  <gis b dis gis>8-. r4 r4.^\fermata \bar "||"
+
+  %%%%%%%%%%%%%%%%%%%
+  % 1st Core
+  gis'4._\mf dis4.
+  fisis8 gis ais gis ais gis 
+  ais8 r4 b4.
+  ais4. gis
+  cis1*6/8  
+  gis8 r4 r4.
+
+  % Breath
+  r1*6/8
+  <dis gis>4-._\p r2
+}
+
+dev_bass = \relative c,
+{
+  \key b \major
+  \clef bass
+  \time 6/8
+
+  %%%%%%%%%%%%%
+  % Pre-core
+  e4^\markup{\italic galloping}^\ppp^\< gis b |
+  e, b' gis |
+  dis fis b | 
+  dis, b' fis | 
+  e4 gis b |
+  dis, fis b | 
+
+  a c dis |
+  ais cis f |
+  dis, ais' cis |
+  d, a' c |
+  ais dis cis |
+  <gis dis'>8-.^\!^\fff r4 r4.^\fermata |  
+
+  %%%%%%%%%%%%%
+  % 1st Core
+  dis'4 r dis'
+  dis,4 r dis'
+  dis,16 gis b gis b gis dis'4.
+
+  dis,4 r dis'
+  dis,4 r dis'
+  dis,16 gis b gis b gis dis'4.
+
+  % breath
+  r1*6/8
+  r1*6/8
+}
+
+theDevelopment = {
+  <<
+    \new ChordNames {
+      \set chordChanges = ##t
+      \set noChordSymbol = ""
+      \set minorChordModifier = \markup { \char ##x2013 }
+      \devchordnames
+    }
+    \new Staff \dev_treble
+    \new Staff \dev_bass
+  >>
+}
+
+\score {
+  \theDevelopment
+  \layout {}
+}
+
+\score {
+  \unfoldRepeats{ << \new Staff \dev_treble \new Staff \dev_bass >>}
+  \midi {}
+}
+
