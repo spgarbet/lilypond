@@ -328,6 +328,7 @@ theExposition = {
 %% Development
 %%
 devchordnames = \chordmode {
+  % Pre Core
   e2.
   e2.
   b2./dis
@@ -340,8 +341,51 @@ devchordnames = \chordmode {
   dis2.:7
   d2.:7 
   dis4./ais dis4.:7
-  gis:m
+  gis2.:m
+
+  % Core 1
+  \repeat volta 2 {
+    gis2.:m/dis
+    gis2.:m/dis
+    gis2.:m/dis
+    gis2.:m/dis
+    gis2.:m/dis
+    gis2.:m/dis
+  }
+  gis2.:m/dis
+  gis2.:m/dis
+  dis2.:m
+
+  gis2.:m/dis
+  gis2.:m/dis
+  dis4.:m d/f
+
+  dis2.:m
+  ais2.:dim
+  gis4.:m ais4.:dim
+
+  a2.:dim
+  a2.:dim
+  ais2.:m
+
+  ais2.:dim
+  ais2.:dim
+  b2.
+   
+  r2.
+  c2.:dim
+  c2.:dim
+  cis2.
+
+  d2.:dim
+  d2.:dim
+  dis2.
+
+  dis2.:dim
+  dis2.:dim
+  e2.
 }
+
 
 dev_treble = \relative c''
 {
@@ -364,20 +408,56 @@ dev_treble = \relative c''
   f4.-> dis4. |  
   d4. r8 dis8 f |
   dis8 f dis f g4 |
-  <gis b dis gis>8-. r4 r4.^\fermata \bar "||"
+  <gis b dis gis>8-. r4 r4.^\fermata 
 
   %%%%%%%%%%%%%%%%%%%
   % 1st Core
-  gis'4._\mf dis4.
-  fisis8 gis ais gis ais gis 
-  ais8 r4 b4.
-  ais4. gis
-  cis1*6/8  
-  gis8 r4 r4.
+  \repeat volta 2
+  {
+    gis'4._\mf dis4.
+    fisis8 gis ais gis ais gis 
+    ais8 r4 b4.
 
-  % Breath
-  r1*6/8
-  <dis gis>4-._\p r2
+    ais4. gis
+    cis1*6/8  
+    gis8 r4 r4.
+  }
+  gis4._\mp^\markup{\italic sostendo} dis4.
+  fisis8 gis ais gis ais gis 
+  dis4 ais8 fis4.
+
+  r1*6/8 % Catch your breath
+  <dis gis>4-._\p r4 ais8_\mf dis
+  ais'8^\markup{\italic {a tempo}} fis dis d4.
+  
+  dis4 ais'8 fis4.
+  ais4 e'8 c4 ais8
+  dis8 b gis ais4. 
+
+  % Adim is a c dis fis, scale: a ais c cis dis e ais 
+  a4 dis8 c4. 
+  c4 ais'8 fis4.
+  \slashedGrace { fis16 } f8^\sfz cis ais~ ais4.
+
+  % A#dim is ais cis e g, scale ais b cis d e f g 
+  ais4. e4.
+  g8 ais b ais b ais
+  \slashedGrace { c16 } b4^\sfz fis8 dis4.
+
+  r1*6/8 % Extra Breath
+
+  r4 <dis a>^\markup{\italic rallentando}_\mf c
+  <dis a>4 c a8 dis
+  gis8_\f eis cis~ cis4. 
+
+  d'4.\> gis,
+  cis8 d e d e d
+  dis4 ais8 fisis4.\!_\pp
+
+  % D# dim scale  dis f fis gis a b c d
+  dis4_\ff a'8 fis4. 
+  a4 dis8 c4.
+  \slashedGrace {f16} e8^\sfz  b gis~ gis4.
 }
 
 dev_bass = \relative c,
@@ -404,17 +484,58 @@ dev_bass = \relative c,
 
   %%%%%%%%%%%%%
   % 1st Core
-  dis'4 r dis'
-  dis,4 r dis'
-  dis,16 gis b gis b gis dis'4.
+  \repeat volta 2
+  {
+    dis'4 r dis'
+    dis,4 r dis'
+    dis,16 gis b gis b gis dis'4.
+
+    dis,4 r dis'
+    dis,4 r dis'
+    dis,16 gis b gis b gis dis'4.
+  }
 
   dis,4 r dis'
   dis,4 r dis'
-  dis,16 gis b gis b gis dis'4.
+  dis,16 fis ais fis ais fis dis'4.
 
   % breath
   r1*6/8
   r1*6/8
+  dis,,16 fis ais fis ais fis f4.
+
+  dis4 r dis'
+  ais4 r ais'
+  dis,16 gis b gis b gis c4.
+
+  % Romantic Fool
+  % Adim is a c dis fis, scale: a ais c cis dis e fis g
+  r8 a, a' gis g fis
+  f gis e d dis c
+  ais2. % Cut short
+
+  % His lover
+  % A#dim is ais cis e g, scale ais b cis d e f g gis
+  g8 ais cis b cis d
+  e f g f g ais
+  b2.
+
+  r1*6/8 % Extra Breath
+
+  r1*6/8
+  r1*6/8
+  cis,16 eis gis eis gis eis gis4.
+
+  % The Princess
+  d,4-. gis-. d'-. 
+  f4-. g8-. gis8-. ais8-. cis-.  
+  r1*6/8
+  
+
+  % The Scullion
+  <dis, a' bis>4-^ <dis a' bis> <dis a' bis>8 <dis a' bis>-^
+  r4 <dis a' bis>4-^ <dis a' bis>
+  <e  gis b>8 r8 r2
 }
 
 theDevelopment = {
