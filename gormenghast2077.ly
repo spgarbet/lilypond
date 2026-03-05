@@ -114,7 +114,7 @@ harmony = \relative c'''
   r4 e dis r^\fermata |
 
   <a' dis b' >1\>
-  <gis b e>4\! r2. \bar "."
+  <gis b e>4\! r2. \bar "|."
 }
 
 melody = \relative c' {
@@ -210,7 +210,7 @@ melody = \relative c' {
    r4 <fis b dis>-. r <fis cis' e>-.\!^\ppp |
 
    <e' fis a b dis>1^\ff |
-   <e gis b e>4^\p r2. \bar "."
+   <e gis b e>4^\p r2. \bar "|."
 }
 
 chordnames = \chordmode {
@@ -384,6 +384,55 @@ devchordnames = \chordmode {
   dis2.:dim
   dis2.:dim
   e2.
+
+  % 1st Core Cadence
+  ais2.:m/f
+  dis2.:7
+  d2.:dim7/f 
+  dis2./ais
+  dis2.:7
+  gis2.:m
+
+  % retransition (false ending)
+  cis2.:m
+  cis2.:m
+  cis2.:m
+
+  gis2.:m7
+  gis2.:m7
+  gis2.:m7
+
+  cis2.:m
+  cis2.:m
+  cis2.:m
+
+  gis2.:m7
+  gis2.:m7
+  gis2.:m7
+
+  ais2.:dim
+  dis2.:m
+  gis2.:m
+
+  cis2.:m/e
+  dis2.:m/fis
+  dis2.:7
+
+  % Dramatic flourish Standing on the dominant
+  gis2.
+  gis2.  
+  gis2.  
+  gis2.  
+  gis2.  
+  gis2.  
+  
+  % Final short recap of main theme in I
+  cis2.:m 
+  cis2.:m 
+  cis2.:m 
+  cis2.:m 
+  cis2.:m 
+  cis2.:m 
 }
 
 
@@ -458,7 +507,68 @@ dev_treble = \relative c''
   dis4_\ff a'8 fis4. 
   a4 dis8 c4.
   \slashedGrace {f16} e8^\sfz  b gis~ gis4.
+
+  % 1st Core final cadence
+  \slashedGrace {d''16} cis4^\markup{\italic {a tempo}} ais8 f4.
+  \slashedGrace {c'16} b4 g8 dis4.
+  \slashedGrace {a'16} gis4 f8 d4.
+
+  r8 ais8 gis fis e dis 
+  <cis e>8 <dis f> <e g> <eis gis> <fisis ais>4
+  <gis b>2.
+
+  r2.
+  <e gis cis e>4. <e gis cis e>4.
+  cis''8 gis e cis gis e
+ 
+  <gis b dis fis>2.
+  r2.
+  <dis fis gis b>4 <fis gis b dis> <gis b dis fis>
+  
+  <gis cis e gis>2.
+  r2.
+  b8 a gis ais bis cis
+  
+  <gis b dis fis>2.   
+  <gis b dis fis>4. <gis b dis fis>4.   
+  r4. r4 ais8
+
+  g e fis a ais cis
+  dis r4 ais8 r gis
+  fis  e fis  gis  ais bis
+
+  cis r4 gis8 r ais
+  gis fis gis ais b cis
+  dis cis dis eis fisis gis
+
+  ais gis ais gis ais gis
+  fis e dis cis b a
+  gis fis gis fis gis fis
+  
+  ais gis bis ais cis bis
+  dis a cis gis b fis 
+  <dis gis bis>2.-^ 
+
+  cis'2.
+  gis2.
+  dis4. cis4. 
+
+  bis4. r4 cis8
+  dis cis dis cis dis e
+  <<
+  {
+    <gis, cis e gis>2.^\fermata
+  }
+  \new Voice 
+  {
+    s4. s4
+    dis'8->-.
+  }
+  >> \oneVoice
+
+  \bar "|."
 }
+
 
 dev_bass = \relative c,
 {
@@ -532,10 +642,59 @@ dev_bass = \relative c,
   r1*6/8
   
 
-  % The Scullion
+  % The Drunken Duke
   <dis, a' bis>4-^ <dis a' bis> <dis a' bis>8 <dis a' bis>-^
   r4 <dis a' bis>4-^ <dis a' bis>
   <e  gis b>8 r8 r2
+
+  % 1st Core Cadence
+  f,4 r ais
+  dis4 r cis
+  f r d
+
+  ais r dis 
+  dis r cis
+  gis2.
+
+  r4.  cis16 e gis e gis e 
+  cis4. <cis cis,>4.
+  r2.
+
+  <gis fis'>2. 
+  r2.
+  r2.
+
+  <cis cis,>2.
+  r2.
+  r4. cis16 e gis e gis e 
+
+  gis2.
+  <fis gis,>4. <fis gis,>4.
+  r2.
+ 
+  r2 ais,4
+  dis2.
+  r2 gis,4
+
+  e2.
+  r2 fis4
+  dis2.
+
+  r2 gis4
+  <gis eis' gis>4 r2
+  <gis dis' gis>4 r2
+
+  <gis dis' gis bis>2.~
+  <gis dis' gis bis>2.~
+  <gis dis' gis bis>2.
+
+  <cis e gis cis>2.~
+  <cis e gis cis>2.
+  r2.
+
+  r2.
+  r4 <bis dis>4-. <cis e>4-.
+  <cis cis,>2.^\fermata
 }
 
 theDevelopment = {
