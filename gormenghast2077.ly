@@ -899,6 +899,28 @@ coda_chords = \chordmode
   fis1:m
   fis1:m
   fis1:m
+  fis1:m
+  fis1:m
+  fis1:m
+  fis1:m
+  fis1:m
+  fis1:m
+  fis1:m
+  fis1:m
+  fis1:m
+
+  cis1:7
+  gis1:9
+  cis2:7 gis2:9
+  
+  b1:13
+  fis:dim 
+  e2:7+ fis2:11+
+  
+  cis1:m9
+  e1:sus
+  gis1:9 
+
 }
 
 coda_treble = \relative c'
@@ -919,8 +941,24 @@ coda_treble = \relative c'
   e4 dis cis  r8 cis8
   dis8 cis dis e gis4 dis
 
-  cis2 a 
-  e'4 dis cis 
+  cis2 a  |
+  e'4 dis cis r4 | 
+
+  <e, a dis>1_\markup{\italic {con brio}}  \bar "!"
+  <fis bis eis>1 \bar "!"
+  <e a dis>2 <fis bis eis>2 |
+
+  <gis cis fis>1  \bar "!" % B13
+  <a c e>1 \bar "!"  % F#dim
+  <gis b d>2 <e b' cis> | % E M7, F# (#11)
+
+  <e gis b>1 \bar "!"
+  <e a b>1 \bar "!" 
+  r1 |
+  
+  \time 3/4
+
+  \slashedGrace {d'8} cis 4( gis bis)
 }
 
 coda_bass = \relative c
@@ -940,7 +978,24 @@ coda_bass = \relative c
   a1
   gis1
   fis1
-  fis'1^\markup{\italic armonioso}
+  fis'1
+
+  gis2 e \bar "!"
+  bis'4 ais gis r8 ais \bar "!"
+  gis8 fis gis ais bis4 gis |
+
+  gis8 fis gis a b4 gis \bar "!"
+  fis8 e fis gis a4 fis \bar "!"
+  <e gis>4( b'-.) <dis, fis>( a'-.) |
+
+  cis,2 e4 gis \bar "!"
+  g2 a4 cis8 b \bar "!"
+  gis8 fis4 r8 fis8 e8 dis4^\fermata |
+
+  \time 3/4
+
+  \slashedGrace {s8}
+  cis,,4->^\markup{\italic accelerando} <cis'' e gis> <cis e gis>
 }
 
 theCoda = {
