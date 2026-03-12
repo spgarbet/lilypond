@@ -8,7 +8,7 @@
   midititle= "gormenghast2077.midi"
 }
 
-harmony = \relative c'''
+exposition_treble = \relative c'''
 {
   \tempo "Gemendo" 4 = 90 
   \key cis \minor
@@ -117,7 +117,7 @@ harmony = \relative c'''
   <gis b e>4\! r2. \bar "|."
 }
 
-melody = \relative c' {
+exposition_bass = \relative c' {
   \key cis \minor
   \clef bass
   \time 4/4
@@ -213,7 +213,7 @@ melody = \relative c' {
    <e gis b e>4^\p r2. \bar "|."
 }
 
-chordnames = \chordmode {
+exposition_chords = \chordmode {
   cis1:m
   gis/c
   cis2:m gis/c
@@ -307,10 +307,10 @@ theExposition = {
       \set noChordSymbol = ""
       \set minorChordModifier = \markup { \char ##x2013 }
       \set Timing.beatStructure = 4,4,4
-      \chordnames
+      \exposition_chords
     }
-    \new Staff \harmony
-    \new Staff \melody
+    \new Staff \exposition_treble
+    \new Staff \exposition_bass
   >>
 }
 
@@ -327,7 +327,7 @@ theExposition = {
  %%
 %% Development
 %%
-devchordnames = \chordmode {
+dev_chords = \chordmode {
   % Pre Core
   e2.
   e2.
@@ -703,7 +703,7 @@ theDevelopment = {
       \set chordChanges = ##t
       \set noChordSymbol = ""
       \set minorChordModifier = \markup { \char ##x2013 }
-      \devchordnames
+      \dev_chords
     }
     \new Staff \dev_treble
     \new Staff \dev_bass
@@ -717,6 +717,252 @@ theDevelopment = {
 
 \score {
   \unfoldRepeats{ << \new Staff \dev_treble \new Staff \dev_bass >>}
+  \midi {}
+}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%
+%% The Recap
+%%
+
+recap_chords = \chordmode {
+  cis1:m
+  cis1:m
+  d:m
+  d:m
+  cis1:m
+  d:m
+
+  cis1:m
+  cis1:m
+  d:m
+  d:m
+  cis1:m
+  d:m
+
+  e1
+  d1:m
+  cis:m
+  cis:m
+  g:5-.9
+  g:5-.9
+  gis/c
+  gis
+
+  b:11
+  b:11
+  cis:m
+
+  dis:m
+  d:m7
+  cis:m 
+}
+
+recap_treble = \relative c'
+{
+  \tempo "Adagio" 4 = 50
+  \key cis \minor
+  \clef treble
+  \time 4/4
+
+  r1 r1 r1 r2 r4^\fermata r4 r1 r1
+  
+  \ottava -1
+  cis1(
+  g1 
+  e2 d2
+  cis2) r4 d4(
+  e4 d e f
+  g2 cis,2)
+
+  <e gis>4.( b'8-.) r2
+  <d, f>4.( a'8-.) r2
+  cis,1( 
+  e2 gis)
+  g1( 
+  a2) cis4( b
+
+  a4 gis2) r4 
+  gis4( ais c2)
+
+  \ottava 0
+  <gis' b cis e>8.-.  <gis b cis e>8.-. <fis a cis e>8-.  <gis b cis e>4 r4
+  <gis b cis e>8.-.  <gis b cis e>8.-. <fis a cis e>8-.  <gis b cis e>4 r4
+  <gis b cis e>8.-.  <gis b cis e>8.-. <g c d e>8-.  <gis b cis e>4 r4
+
+  \stemDown \autoBeamOff dis8(^\markup {\italic pizz.} ais' \stemUp \autoBeamOn dis fis ais
+    \tuplet 3/2 {b cis dis)} r8 
+  \stemDown \autoBeamOff d,,8( a' \stemUp \autoBeamOn d f a
+    \tuplet 3/2 {b cis d)} r8 
+  \stemDown \autoBeamOff cis,,8( gis' \stemUp \autoBeamOn cis e gis
+    \tuplet 3/2 {ais bis cis)} r8 
+
+  cis,4( gis4 bis8 cis dis cis
+  dis8) r8 e4( dis cis
+  fis,2 cis'8-.) r4.
+
+  cis4( gis4 bis8 cis dis cis
+  dis8) r8 e4( dis cis
+  gis2. e'4 
+
+  cis1)
+
+  dis,2.^\markup{\italic crescendo}( fis4~
+  fis4 ais bis) cis8( dis 
+  \tuplet 3/2 {c8^\markup{\italic calando} b a-.)}   g16( f e-.) r  d( c b-.) r  ais(  b c-.) r
+  r1 \bar "|."
+}
+
+recap_bass = \relative c,
+{
+  \key cis \minor
+  \clef bass
+  \time 4/4
+
+  \ottava -1
+  cis1^\pp(
+  g^\ppp
+  e2 d2
+  cis2) r4^\fermata d4(
+  e4 d e f
+  gis2 d2)
+
+  <cis e'>1~^\mp
+  <cis e'>1
+  <d a' d>1~
+  <d a' d>
+  <cis' e>4. r8 <cis e>4. r8
+  <d, a' d>1
+
+  e'1(^\mp^\<
+  d1
+  cis1~^\f\!
+  cis1)^\> 
+  g~
+  g
+  c
+  gis\!^\p
+  
+  \ottava 0
+
+  b8.-.^\mf b8.-. r8 r2
+  b8.-. b8.-. r8 r2
+  cis8.-. cis8.-. r8 r2
+ 
+  r1^\p r1 r1
+
+  gis'4^\mp gis' gis, gis'
+  gis,4 gis' gis, gis'
+  \repeat "tremolo" 4 fis8~ fis8 r8 r4
+
+  gis,4 gis' gis, gis'
+  gis,4 gis' fis  gis
+  e  gis  dis  \repeat "tremolo" 2 gis8~
+  gis1
+
+  dis1~^\p
+  dis1
+  d2. r4
+  cis4-.^\ppp r2. \bar "|."
+}
+
+theRecap = {
+  <<
+    \new ChordNames {
+      \set chordChanges = ##t
+      \set noChordSymbol = ""
+      \set minorChordModifier = \markup { \char ##x2013 }
+      \recap_chords
+    }
+    \new Staff \recap_treble
+    \new Staff \recap_bass
+  >>
+}
+
+\score {
+  \theRecap
+  \layout {}
+}
+
+\score {
+  \unfoldRepeats{ << \new Staff \recap_treble \new Staff \recap_bass >>}
+  \midi {}
+}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%
+%%
+%% Coda
+%%
+coda_chords = \chordmode
+{
+  fis1:m
+  fis1:m
+  fis1:m
+}
+
+coda_treble = \relative c'
+{
+  \tempo "Andante" 4 = 90
+  \key cis \minor
+  \clef treble
+  \time 4/4
+
+  fis8-._\markup{\italic testing} r8 r4 r2
+  \slashedGrace {e16} fis8-. r8 \slashedGrace {e16} fis8-. r8 r4. r16  fis16(
+  e16 fis gis a-.) r2.
+  r1
+  fis16-. fis-. r8 r2 r8. fis16(
+  e16 fis gis a-.) r2 r8 fis8
+  gis8_\markup{\italic heartening} fis8 gis a cis4 fis
+  cis'2-> gis
+  e4 dis cis  r8 cis8
+  dis8 cis dis e gis4 dis
+
+  cis2 a 
+  e'4 dis cis 
+}
+
+coda_bass = \relative c
+{
+  \key cis \minor
+  \clef bass
+  \time 4/4
+
+  r1^\mp
+  r1
+  r2 g2_\sfz
+  r1
+  r1
+  r2 r8 fis4.^\pp 
+  r1
+  b1_\markup{\italic reluctant}
+  a1
+  gis1
+  fis1
+  fis'1^\markup{\italic armonioso}
+}
+
+theCoda = {
+  <<
+    \new ChordNames {
+      \set chordChanges = ##t
+      \set noChordSymbol = ""
+      \set minorChordModifier = \markup { \char ##x2013 }
+      \coda_chords
+    }
+    \new Staff \coda_treble
+    \new Staff \coda_bass
+  >>
+}
+
+\score {
+  \theCoda
+  \layout {}
+}
+
+\score {
+  \unfoldRepeats{ << \new Staff \coda_treble \new Staff \coda_bass >>}
   \midi {}
 }
 
