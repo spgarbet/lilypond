@@ -919,8 +919,37 @@ coda_chords = \chordmode
   
   cis1:m9
   e1:sus
-  gis1:9 
+  gis1:9- 
 
+  cis2.:m
+  fis2.
+  b
+  e
+
+  cis2.:m
+  fis2.
+  b
+  e
+
+  cis2.:m
+  fis2.
+  b
+  e
+
+  cis2.:m
+  fis2.
+  b
+  e
+
+  cis2.:m
+  fis2.
+  b2.:7
+  e2.
+
+  gis2.
+  cis2.
+  fis2.
+  b2.:7
 }
 
 coda_treble = \relative c'
@@ -958,7 +987,40 @@ coda_treble = \relative c'
   
   \time 3/4
 
-  \slashedGrace {d'8} cis 4( gis bis)
+  \slashedGrace {d'8} cis 4( gis bis |
+  cis8 dis cis \slashedGrace {f} dis-.) r4 |
+  \slashedGrace {e8} dis4( cis b
+  gis2) \slashedGrace {a8} b4-.
+
+  \slashedGrace {d'8} cis 4( gis bis |
+  cis8 dis cis \slashedGrace {f} dis-.) r4 |
+  \slashedGrace {e8} dis4( cis b
+  gis2) \slashedGrace {a8} b4-.
+
+  \slashedGrace {d,8} cis 4( gis bis |
+  cis8 dis cis \slashedGrace {f} dis-.) r4 |
+  \slashedGrace {e8} dis4( cis b
+  gis2) \slashedGrace {a8} b4-.
+
+  \grace {cis16( d)} cis 4( gis bis |
+  cis8 dis cis \slashedGrace {f} dis-.) r4 |
+  \slashedGrace {e8} dis4( d8 dis ais' cis,
+  gis2.) 
+  
+  r8 cis, \tuplet 3/2 {cis''8 c b} \tuplet 5/2 {ais8 gis c g f~ }
+  f8 fis  dis cis d b
+  a4 gis fis
+  e2.\startTrillSpan
+
+  dis8\stopTrillSpan gis \tuplet 3/2 {c ais b} \tuplet 5/2 {c cis d dis f~}
+  f8 g f fis dis cis 
+  d4 bis ais
+  fis8 e8 dis2
+
+  r4 gis8 fis e4~
+  e4 r a8 gis
+  fis4 gis8 ais8 bis4
+  <cis, e gis cis>2. \bar "|."
 }
 
 coda_bass = \relative c
@@ -990,12 +1052,44 @@ coda_bass = \relative c
 
   cis,2 e4 gis \bar "!"
   g2 a4 cis8 b \bar "!"
-  gis8 fis4 r8 fis8 e8 dis4^\fermata |
+  a8 gis4 r8 fis8 e8 dis4^\fermata |
 
   \time 3/4
 
-  \slashedGrace {s8}
-  cis,,4->^\markup{\italic accelerando} <cis'' e gis> <cis e gis>
+  \slashedGrace {s8} cis,,4->^\markup{\italic accelerando} <cis'' e gis> <cis e gis>
+  fis,4 <cis' fis ais> <cis fis ais>
+  b,4 <dis' fis b> <dis fis b>
+  e,4 <b' e gis> <b e gis>
+
+  \slashedGrace {s8} cis,4-> <cis' e gis> <cis e gis>
+  fis,4 <cis' fis ais> <cis fis ais>
+  b,4 <dis' fis b> <dis fis b>
+  e,4 <b' e gis> r
+
+  \slashedGrace {s8} cis,4-> <cis' e gis> <cis e gis>
+  fis,4 <cis' fis ais> <cis fis ais>
+  b,4 <dis' fis b> <dis fis b>
+  e,4 <b' e gis> <b e gis>
+
+  \slashedGrace {s8} cis,4-> <cis' e gis> <cis e gis>
+  fis,4 <cis' fis ais> <cis fis ais>
+  b,4 <dis' fis b> <dis fis b>
+  e,4 <b' e gis> r
+
+  \slashedGrace {s8} cis,4-> <cis' e gis> <cis e gis>
+  fis,4 <cis' fis ais> <cis fis ais>
+  b,4 <dis' fis b> <dis fis a>
+  e,4 <b' e gis> r
+
+  \slashedGrace {s8} gis,4-> <dis'' gis bis> <dis gis bis>
+  cis,4 <cis' eis gis> <cis eis gis>
+  fis,4 <cis' fis ais> <cis fis ais>
+  b,4 <dis' fis a> r
+
+  r2 <e b' cis>4~ 
+  <e b' cis>4 r2
+  <e b' cis>2 <bis dis gis>4
+  <cis, cis'>2. \bar "|."
 }
 
 theCoda = {
