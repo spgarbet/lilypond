@@ -4,7 +4,9 @@
   title = "Gormenghast 2077"
   subtitle = "Sonata No. 1 in C sharp minor"
   composer = "Shawn Garbett"
-  tagline  = "Copyright 2026 Shawn Garbett"
+  copyright  = "Copyright 2026 Shawn Garbett"
+  opus = "1"
+  tagline = ""
   midititle= "gormenghast2077.midi"
 }
 
@@ -94,7 +96,6 @@ exposition_treble = \relative c'''
   e'8 b gis e fis8-. r8 r4 |
  
   % Cadential (evaded)
-  \repeat volta 2 {
   r8 e' e' dis-3 d-1 cis-3 b-1 dis-5 \bar "!"
   ais-3 gis-2 a-3 fis-2 e-1 f-4 dis cis \bar "!"
   a-1 gis-3 fis e fis e fis e |
@@ -102,7 +103,14 @@ exposition_treble = \relative c'''
   fis b-1 dis-3 cis d-1 dis-2 e-1 f \bar "!" 
   fis-3 gis-4 fis-2 gis-3 ais gis a fis \bar "!"
   e f dis cis a-1 gis-3 fis4 |
-  }
+
+  r8 e e'' dis-3 d-1 cis-3 b-1 dis-5 \bar "!"
+  ais-3 gis-2 a-3 fis-2 e-1 f-4 dis cis \bar "!"
+  a-1 gis-3 fis e fis e fis e |
+
+  fis b-1 dis-3 cis d-1 dis-2 e-1 f \bar "!" 
+  fis-3 gis-4 fis-2 gis-3 ais gis a fis \bar "!"
+  e f dis cis a-1 gis-3 fis4 |
 
   gis8 fis gis a r4 gis \bar "!"
   r4 e dis r \bar "!"
@@ -190,7 +198,6 @@ exposition_bass = \relative c' {
    \tuplet 3/2 {e,8 e' b e e, e' } fis,8-. r8 r4  |
 
    % Cadential (evaded)
-   \repeat volta 2 {
    gis4^\markup{\italic zeloso} b2 e4 \bar "!" 
    gis,4 b2 e4 \bar "!" 
    a,4 cis2 fis4 |
@@ -198,7 +205,85 @@ exposition_bass = \relative c' {
    fis,4 b2 dis4 \bar "!"
    fis8 r gis4( fis e \bar "!"
    b2 a)  |
-   }
+
+   gis4^ b2 e4 \bar "!" 
+   gis,4 b2 e4 \bar "!" 
+   a,4 cis2 fis4 |
+
+   fis,4 b2 dis4 \bar "!"
+   fis8 r gis4( fis e \bar "!"
+   b2 a)  |
+
+   % Codetta
+   e4^\markup{\italic{con espressione}} e' r <ais, cis e gis>-. \bar "!"
+   r4 <fis b dis>-. r <fis cis' e>-. \bar "!"
+   r4 <e' gis>-. r <ais, cis e gis>-. |
+
+   r4 <fis b dis>-. r <fis cis' e>-. \bar "!"
+   r4^\markup{\italic melting}\> <e' gis>-. r <ais, cis e gis>-. \bar "!"
+   r4 <fis b dis>-. r <fis cis' e>-.\!^\ppp |
+
+   <e' fis a b dis>1^\ff |
+   <e gis b e>4^\p r2. \bar "|."
+}
+
+exposition_chords = \chordmode {
+  cis1:m
+  gis/c
+  cis2:m gis/c
+
+  cis1:m
+  gis/c
+  cis2:m gis/c
+
+  gis1:m
+  fis:m
+  e2 dis2:dim
+
+  cis1:m
+  g:5-.9
+  gis/c
+
+  gis1
+  dis:dim/fis
+  gis2. e4
+
+  a4:7/e fis:m7 b e4.
+  a4:7/e fis:m7 b e4.
+  e4/gis fis:m fis:7 
+
+  \repeat volta 2{
+  b1:11
+  b1:11
+  cis1:11
+
+  fis1:m
+  fis1:7
+  b
+  }
+
+  % Subordinate theme
+  \repeat volta 2 {
+  e1/b
+  e1/b
+  e1/a
+  }
+
+  e1/b
+  e1/b % New Motive introduction
+  e2/b b/dis
+
+  e1 
+  ais:m/cis
+  b2 ais:m/cis
+
+  b1
+  fis:dim
+  e2/gis fis:dim 
+
+  e1/gis
+  b1
+  e2 b  
 
    % Codetta
    e4^\markup{\italic{con espressione}} e' r <ais, cis e gis>-. \bar "!"
@@ -272,7 +357,6 @@ exposition_chords = \chordmode {
   e2 b  
 
   % Cadential, ECP
-  \repeat volta 2 {
   e1/gis
   e1/gis
   fis1:m/a
@@ -280,7 +364,14 @@ exposition_chords = \chordmode {
   b1/fis
   b/fis
   b1:7
-  }
+
+  e1/gis
+  e1/gis
+  fis1:m/a
+
+  b1/fis
+  b/fis
+  b1:7
 
   e2 ais:dim7 
   b/fis b:7
@@ -775,8 +866,8 @@ recap_treble = \relative c'
   e4 d e f
   g2 cis,2)
 
-  <e gis>4.( b'8-.) r2
-  <d, f>4.( a'8-.) r2
+  << {<e gis>1} \\ {r4 r8 b'8^. s2} >>
+  << {<d, f>1} \\ {r4 r8 a'8^. s2} >>
   cis,1( 
   e2 gis)
   g1( 
@@ -836,10 +927,10 @@ recap_bass = \relative c,
 
   e'1(^\mp^\<
   d1
-  cis1~^\f\!
-  cis1)^\> 
-  g~
-  g
+  cis1~
+  cis1)
+  g~^\f\!
+  g^\>
   c
   gis\!^\p
   
@@ -1048,7 +1139,7 @@ coda_bass = \relative c
 
   gis8 fis gis a b4 gis \bar "!"
   fis8 e fis gis a4 fis \bar "!"
-  <e gis>4( b'-.) <dis, fis>( a'-.) |
+  <e gis>4( b'-.) <e, fis>( a-.) |
 
   cis,2 e4 gis \bar "!"
   g2 a4 cis8 b \bar "!"
