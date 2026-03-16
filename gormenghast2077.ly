@@ -206,84 +206,13 @@ exposition_bass = \relative c' {
    fis8 r gis4( fis e \bar "!"
    b2 a)  |
 
-   gis4^ b2 e4 \bar "!" 
+   gis4 b2 e4 \bar "!" 
    gis,4 b2 e4 \bar "!" 
    a,4 cis2 fis4 |
 
    fis,4 b2 dis4 \bar "!"
    fis8 r gis4( fis e \bar "!"
    b2 a)  |
-
-   % Codetta
-   e4^\markup{\italic{con espressione}} e' r <ais, cis e gis>-. \bar "!"
-   r4 <fis b dis>-. r <fis cis' e>-. \bar "!"
-   r4 <e' gis>-. r <ais, cis e gis>-. |
-
-   r4 <fis b dis>-. r <fis cis' e>-. \bar "!"
-   r4^\markup{\italic melting}\> <e' gis>-. r <ais, cis e gis>-. \bar "!"
-   r4 <fis b dis>-. r <fis cis' e>-.\!^\ppp |
-
-   <e' fis a b dis>1^\ff |
-   <e gis b e>4^\p r2. \bar "|."
-}
-
-exposition_chords = \chordmode {
-  cis1:m
-  gis/c
-  cis2:m gis/c
-
-  cis1:m
-  gis/c
-  cis2:m gis/c
-
-  gis1:m
-  fis:m
-  e2 dis2:dim
-
-  cis1:m
-  g:5-.9
-  gis/c
-
-  gis1
-  dis:dim/fis
-  gis2. e4
-
-  a4:7/e fis:m7 b e4.
-  a4:7/e fis:m7 b e4.
-  e4/gis fis:m fis:7 
-
-  \repeat volta 2{
-  b1:11
-  b1:11
-  cis1:11
-
-  fis1:m
-  fis1:7
-  b
-  }
-
-  % Subordinate theme
-  \repeat volta 2 {
-  e1/b
-  e1/b
-  e1/a
-  }
-
-  e1/b
-  e1/b % New Motive introduction
-  e2/b b/dis
-
-  e1 
-  ais:m/cis
-  b2 ais:m/cis
-
-  b1
-  fis:dim
-  e2/gis fis:dim 
-
-  e1/gis
-  b1
-  e2 b  
 
    % Codetta
    e4^\markup{\italic{con espressione}} e' r <ais, cis e gis>-. \bar "!"
@@ -381,7 +310,6 @@ exposition_chords = \chordmode {
   b/fis b:7
 
   e1 e
-  
 }
 
 % It+6 is #V7 with no 5th
