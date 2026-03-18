@@ -12,7 +12,7 @@
 
 exposition_violin_i = \relative c''' 
 {
-  \tempo "Gemendo" 4 = 90
+  \tempo "Gemendo" 4 = 120
   \key cis \minor
   \clef treble
   \time 4/4
@@ -490,4 +490,10 @@ theExposition =
 {
   \theExposition
   \layout {}
+}
+
+\score
+{
+  \unfoldRepeats{ \theExposition }
+  \midi {}
 }
