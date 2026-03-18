@@ -19,6 +19,8 @@ exposition_violin_i = \relative c'''
 
   % Opening Sentence 
 
+  \mark "tracking shot of residents"
+
   <<cis4 gis'4-._\markup{\italic pizz.}_\mp>> r2. \bar "!"
   c,4-. r2. \bar "!"
   cis4-. r4 c4-. r4 |
@@ -41,9 +43,9 @@ exposition_violin_i = \relative c'''
   r1
   r1
 
-  a'8-> r8 r4 r b8->-. r8 \bar "!"
-  r8 a8-> r8 r4 r b8->-. \bar "!"
-  r4 gis8->( fis gis a cis4)-\fermata |
+  cis'8-> r8 r4 r dis8->-. r8 \bar "!"
+  r8 cis8->-. r8 r4 r dis8->-. \bar "!"
+  r4 e8->( dis e fis ais4)-\fermata |
   
   % Period
   \repeat volta 2 {
@@ -53,8 +55,68 @@ exposition_violin_i = \relative c'''
   
   r1
   r1
-  b8_\markup{\italic freddo}_\mp fis' b8 dis fis \tuplet 3/2 {gis ais b} r8 |
+  b,8_\markup{\italic freddo}_\mp fis' b8 dis fis \tuplet 3/2 {gis ais b} r8 |
   }
+
+  % Subordinate theme
+
+  e,,4( b dis8 e fis e \bar "!" 
+  fis8) r gis4( fis e \bar "!"
+  a,2) e'8-. r8 r4  |
+
+  e4( b dis8 e fis e \bar "!" 
+  fis8) r gis4( fis e \bar "!"
+  a,2) e'8-. r8 r4  |
+
+  e4( b dis8 e fis e \bar "!" 
+  fis8) r gis4( fis e \bar "!"
+  b2) r2  |
+
+  % Additional Motif
+
+  r1 \bar "!"
+  r1 \bar "!"
+  r1 |
+
+  b,4. fis'8 dis2 \bar "!"
+  fis4. c'8 a4. dis,8 \bar "!"
+  e8 b' gis e fis2 |
+
+  e4. b'8 gis2 \bar "!"
+  fis4. dis'8 b4. gis8 \bar "!"
+  e'8 b gis e fis-. r8 r4
+
+  % Romantic Evaded Cadence 
+
+  r8_\markup{\italic leggierissimo}( e' e' dis d cis b dis \bar "!"
+  ais gis a fis e f dis cis \bar "!"
+  a gis fis e fis e fis e |
+
+  dis8) r8 r2.
+  r1
+  r1
+
+  r1
+  r1
+  r1
+  
+  r1
+  r1
+  r1
+
+  % Codetta
+  gis8_\mp_\markup{\italic tranquillo}(\> fis gis a) r4 gis4 \bar "!"
+  r1 |
+
+  gis8( fis gis a) r4 gis4 \bar "!"
+  r1 |
+
+  gis8( fis gis a) r4 gis4_\pp\! \bar "!"
+  r2. r4\fermata |
+
+  % Final
+  b'1_\ff_>
+  e,4_\p r2. \bar "|."
 }
 
 exposition_violin_ii = \relative c''' 
@@ -89,8 +151,8 @@ exposition_violin_ii = \relative c'''
 
   a8-> r8 r4 r b8->-. r8 \bar "!"
   r8 a->( gis a b dis4 b8)->-. \bar "!"
-  %r4 gis8-> r8 r4 cis4-\fermata |
-  r4 gis8->( fis gis a cis4)-\fermata |
+  %r4 gis8->( fis gis a cis4)-\fermata |
+  r4 b8->( a b cis e4)-\fermata |
 
   % Period 
 
@@ -101,9 +163,84 @@ exposition_violin_ii = \relative c'''
   ais8. ais8. ais8 ais4 r4 |
 
   r1 
-  fis8_\markup{\italic freddo}_\p cis' fis8 ais cis \tuplet 3/2 {dis e fis} r8 \bar "!"
+  fis,8_\markup{\italic freddo}_\p cis' fis8 ais cis \tuplet 3/2 {dis e fis} r8 \bar "!"
   r1 
   } 
+
+  % Subordinate theme
+  r1
+  r1
+  r1
+
+  %e,,,4( b dis8 e fis e \bar "!" 
+  %fis8) r gis4( fis e \bar "!"
+  %a,2) e'8-. r8 r4  |
+
+  %e4( b dis8 e fis e \bar "!" 
+  %fis8) r gis4( fis e \bar "!"
+  %b2) r2  |
+
+  % Using chord outlines instead
+  b,,4( gis a8 b cis b \bar "!"
+  cis8) r dis4( cis b \bar "!"
+  e,2) b'8-. r8 r4 |
+
+  b4( gis a8 b cis b \bar "!"
+  cis8) r dis4( cis b \bar "!"
+  e,2) r2 |
+  %
+
+  \repeat tremolo 8 b8 \bar "!"
+  \repeat tremolo 8 cis8 \bar "!"
+  % b8 fis' dis b ais2 |
+  r1 |
+
+  \repeat tremolo 8 b8 \bar "!"
+  \repeat tremolo 8 c8 \bar "!"
+  b8 gis' e b c2 |
+  
+  % Moving to chord outlines
+  %e4. b'8 gis2 \bar "!"
+  %fis4. dis'8 b4. gis8 \bar "!"
+  %e'8 b gis e fis-. r8 r4
+
+  b4.   gis'8  e2 \bar "!"
+  dis4. b'8    fis4. e8 \bar "!"  
+  b'8 gis e b dis-. r8 r4 |
+
+  % Romantic Evaded Cadence 
+
+  r1
+  r1
+  r1
+
+  r1
+  r1
+  r1
+
+  r8 e_\markup{\italic {con abbandono}}( \tuplet 3/2 {gis8 a ais b c dis} e fis \bar "!"
+  ais gis a fis e f dis cis \bar "!"
+  a gis fis e fis e fis e |
+
+  dis8) r8 r2.
+  r1
+  r1
+
+  % Codetta
+
+  r1 \bar "!"
+  r4_\p\> e( dis) r |
+
+  r1 \bar "!"
+  r4 e( dis) r |
+
+  r1 \bar "!"
+  r4 e( dis)\!_\ppp r\fermata |
+
+  % Final
+
+  <a' dis>1_\ff_>
+  <gis b>4_\p r2. \bar "|."
 }
 
 exposition_viola = \relative c'
@@ -145,14 +282,87 @@ exposition_viola = \relative c'
 
   \repeat volta 2 
   {
-  e,16_\ff \xNotesOn fis fis \xNotesOff e \xNotesOn fis fis \xNotesOff e \xNotesOn fis \xNotesOff e4 r4 \bar "!"
-  e16 \xNotesOn fis fis \xNotesOff e \xNotesOn fis fis \xNotesOff e \xNotesOn fis \xNotesOff e4 r4 \bar "!"
-  fis16 \xNotesOn gis gis \xNotesOff fis \xNotesOn gis gis \xNotesOff fis \xNotesOn gis \xNotesOff fis4 r4 |
+  e,16_\ff-^ fis fis e-> fis fis e->  fis e4-^ r4 \bar "!"
+  e16-^  fis fis  e-> fis fis e-> fis e4-^ r4 \bar "!"
+  fis16-^  gis gis fis-> gis gis fis->  gis fis4-^ r4 |
 
   cis8_\markup{\italic freddo}_\pp fis  cis'8 fis a \tuplet 3/2 {b cis fis} r8 \bar "!"
   r1
   r1
   }
+
+  % Subordinate theme
+
+  r1
+  r1 
+  r1
+
+  r1
+  r1
+  r1
+
+  % Switching to chordal build
+  %e,4( b dis8 e fis e \bar "!" 
+  %fis8) r gis4( fis e \bar "!"
+  %b4.) fis'8 dis2  |
+
+  gis,4( e fis8 gis a gis \bar "!"
+  a8) r b4( a gis \bar "!"
+  dis4.) fis8 dis2  |
+
+  % Additional Motif
+
+  gis,4. e'8 b2 \bar "!"
+  ais4. f'8 cis4. gis8 \bar "!"
+  b8 fis' dis b ais2 |
+
+  \repeat tremolo 8 b8 \bar "!"
+  \repeat tremolo 8 c8 \bar "!"
+  r1
+
+  % Switch to chordal build
+  %e4. b'8 gis2 \bar "!"
+  %fis4. dis'8 b4. gis8 \bar "!"
+  %e'8 b gis e fis-. r8 r4
+
+  gis4. e'8 b2 \bar "!"
+  b4. fis'8 dis4. b8 \bar "!"
+  gis'8 e b gis b-. r8 r4 |
+  
+
+  % Romantic Evaded Cadence 
+
+  r1
+  r1
+  r1
+ 
+  fis8(_\markup{\italic fieramente} b dis cis d dis e f \bar "!" 
+  fis gis fis gis ais gis a fis \bar "!"
+  e f dis cis a gis fis4) |
+
+  gis4 b2 e4 \bar "!" 
+  gis,4 b2 e4 \bar "!" 
+  a,4 cis2 fis4 |
+
+  fis,4 b2 dis4 \bar "!"
+  fis8 r gis4( fis e \bar "!"
+  b2 a)  |
+  
+  % Codetta
+
+  r2. <e' gis>4-._\p_\> \bar "!"
+  r4 <b dis>-. r <cis e>-. |
+
+  r2. <e gis>4-. \bar "!"
+  r4 <b dis>-. r <cis e>-. |
+
+  r2. <e gis>4-. \bar "!"
+  r4 <b dis>-. r <cis e>-._\ppp\!\fermata |
+
+  % Final
+  
+  <a b>1_\ff_>
+  <b e>4_\p r2. \bar "|."
 }
 
 exposition_cello = \relative c
@@ -192,7 +402,7 @@ exposition_cello = \relative c
   % Period
   \repeat volta 2{
 
-  b,16-^_\markup{\italic feroce}_\ff b b b-> b b b-> b b4-^ r4 \bar "!"
+  b,16-^_\markup{\italic strepitoso}_\ff b b b-> b b b-> b b4-^ r4 \bar "!"
   b16-^ b b b-> b b b-> b b4-^ r4 \bar"!"
   cis16-^ cis cis cis-> cis cis cis-> cis cis4-^ r4 |
   
@@ -204,14 +414,65 @@ exposition_cello = \relative c
 
   % Subordinate Theme
 
+  b8_\mf_\markup{\italic {crescendo con moto}}_\< b' b, b' b, b' b, b' \bar "!"
+  b,8 b' b, b' b, b' b, b' \bar "!"
+  \tuplet 3/2 {a, a' a, a' a, a'} a,8-. r8 r4 |
+
+  b8 b' b, b' b, b' b, b' \bar "!"
+  b,8 b' b, b' b, b' b, b' \bar "!"
+  \tuplet 3/2 {a, a' a, a' a, a'} a,8-. r8 r4 |
+
+  b8_\ff\!\> b' b, b' b, b' b, b' \bar "!"
+  b,8_\mf\!\> b' b, b' a b a b \bar "!"
+  gis8_\mp\! b gis b fis b fis b |
+
   % Additional Motif
 
-  % Romantic Cadential build up 
+  e,8 b' e,8 b' e,8 b' e,8 b' \bar "!"
+  cis,8 ais' e ais cis, ais' e ais \bar "!"
+  b, b' dis, b' cis, ais' e ais |
+
+  b, b' dis, b' b, b' dis, b' \bar "!"
+  a fis' c fis a, fis' c fis \bar "!"
+  gis, e' b e a, fis' c fis |
+
+  gis, e' b e gis, e' b e \bar "!"
+  dis, dis' b dis dis, dis' b dis \bar "!"
+  \tuplet 3/2 {e,8 e' b e e, e'} fis,-. r8 r4 |
+
+  % Romantic Evaded Cadence
+
+  gis,4 b2 e4 \bar "!" 
+  gis,4 b2 e4 \bar "!" 
+  a,4 cis2 fis4 |
+
+  fis,4 b2 dis4 \bar "!"
+  fis8 r gis4( fis e \bar "!"
+  b2 a)  |
+
+  r1
+  r1
+  r1
+ 
+  fis8_\markup{\italic tenerezza}( b dis cis d dis e f \bar "!" 
+  fis gis fis gis ais gis a fis \bar "!"
+  e f dis cis a gis fis4) |
 
   % Codetta
 
-  % Romantc
+  e4_\mp_\> e' r <ais, cis>-. \bar "!"
+  r4 fis-. r fis-. |
 
+  r2. <ais cis>4-. \bar "!"
+  r4 fis-. r fis-. |
+
+  r2. <ais cis>4-. \bar "!"
+  r4 fis-. r fis-._\ppp\!\fermata |
+ 
+  % Final
+
+  <e fis>1_\ff_>
+  <e gis>4_\p r2. \bar "|."
 }
 
 theExposition =

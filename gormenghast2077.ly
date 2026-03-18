@@ -3,9 +3,9 @@
 \header {
   title = "Gormenghast 2077"
   subtitle = "Sonata No. 1 in C sharp minor"
-  composer = "Shawn Garbett"
+  composer = "Composer Shawn Garbett"
   copyright  = "Copyright 2026 Shawn Garbett"
-  opus = "1"
+  arranger = "Arranger Shawn Garbett, Buffy Rhea"
   tagline = ""
   midititle= "gormenghast2077.midi"
 }
@@ -104,7 +104,8 @@ exposition_treble = \relative c'''
   fis-3 gis-4 fis-2 gis-3 ais gis a fis \bar "!"
   e f dis cis a-1 gis-3 fis4 |
 
-  r8 e e'' dis-3 d-1 cis-3 b-1 dis-5 \bar "!"
+  %r8 e e'' dis-3 d-1 cis-3 b-1 dis-5 \bar "!"
+  r8 e \tuplet 3/2 {gis8 a ais b c dis} e fis \bar "!"
   ais-3 gis-2 a-3 fis-2 e-1 f-4 dis cis \bar "!"
   a-1 gis-3 fis e fis e fis e |
 
@@ -198,7 +199,7 @@ exposition_bass = \relative c' {
    \tuplet 3/2 {e,8 e' b e e, e' } fis,8-. r8 r4  |
 
    % Cadential (evaded)
-   gis4^\markup{\italic zeloso} b2 e4 \bar "!" 
+   gis4^\markup{\italic appassionato} b2 e4 \bar "!" 
    gis,4 b2 e4 \bar "!" 
    a,4 cis2 fis4 |
 
