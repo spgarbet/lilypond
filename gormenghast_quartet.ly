@@ -111,8 +111,8 @@ exposition_violin_i = \relative c'''
   gis8( fis gis a) r4 gis4 \bar "!"
   r4 dis-. r e-. |
 
-  gis8( fis gis a) r4 gis4_\pp\! \bar "!"
-  r4 dis-. r e-.-\fermata |
+  gis8( fis gis a) r4 gis4 \bar "!"
+  r4 dis-. r e-.-\fermata_\ppp\! |
 
   % Final
   dis'1_\ff_>
@@ -453,10 +453,10 @@ exposition_cello = \relative c
 theExposition =
 { \new StaffGroup <<
 
-  \new Staff \with {instrumentName = "Violin I"} \exposition_violin_i
+  \new Staff \with {instrumentName = "Violin I"}  \exposition_violin_i
   \new Staff \with {instrumentName = "Violin II"} \exposition_violin_ii
-  \new Staff \with {instrumentName = "Viola"}    \exposition_viola
-  \new Staff \with {instrumentName = "Cello"}    \exposition_cello
+  \new Staff \with {instrumentName = "Viola"}     \exposition_viola
+  \new Staff \with {instrumentName = "Cello"}     \exposition_cello
 
   >>
 }
@@ -472,3 +472,286 @@ theExposition =
   \unfoldRepeats{ \theExposition }
   \midi {}
 }
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%
+%%
+%% The Development 
+%%
+development_violin_i = \relative c
+{
+  \tempo "Allegro" 4. = 140
+  \key b \major
+  \clef treble
+  \time 6/8
+
+  \mark "a messenger arrives"
+
+  % Gallop
+
+  e'''2.-^_\ppp\<_\markup{\italic gallop}     |
+  b         |
+  fis4.-> e |
+
+  dis4. r8 e fis |
+  e8 fis e fis gis4 |
+  b4. fis |
+ 
+  dis2.-^   |
+  ais'      |
+  f4.-> dis |
+ 
+  d4. r8 dis f |
+  dis f dis f g4 |
+  gis8-._\fff\! r4 r4.^\fermata \bar "||"
+
+  % Subordinate
+
+  gis4.(_\mf dis) |
+  fisis8( gis ais gis ais gis |
+  ais8) r4 b4.( |
+  
+  ais4. gis) |
+  cis2.( |
+  gis8) r4 r4. 
+
+  gis4.( dis) |
+  fisis8( gis ais gis ais gis |
+  ais8) r4 b4.( |
+  
+  ais4. gis) |
+  cis2.( |
+  gis8) r4 r4. 
+
+  gis4._\mp_\markup{\italic sostendo} dis |
+  fisis8 gis ais gis ais gis |
+  dis4\> ais8 fis4.\! |
+
+  r2.\fermata   
+  r2.
+  r2._\markup{\italic{a tempo}} |
+
+  dis'4 ais8 fis4. |
+  ais4 e'8 c4 ais8 |
+  dis8 b gis ais4. |
+
+  a4\< dis8 c4. |
+  c4 ais'8 fis4.\! |
+  \slashedGrace {fis16(} f8)_\sfz cis ais~ ais4. |
+
+  ais4._\mf\<( e4.) |
+  g8( ais b ais b ais\! |
+  \slashedGrace{c16} b4_\sfz fis8 dis4.) |
+
+  r2.\fermata |
+}
+
+development_violin_ii = \relative c
+{
+  \clef treble
+  \key b \major
+
+  % Gallop
+
+  r2. |
+  r2. |
+  r2. |
+
+  r2. |
+  r2. |
+  r2. |
+
+  c''2.->_\ppp\<_\markup{\italic gallop} | 
+  cis2.  |
+  cis4.-> g |  
+
+  fis4. r8  g cis |
+  g8 cis g cis dis4 |
+  dis8-._\fff\! r4 r4.\fermata \bar "||"
+
+  % Subordinate
+  \xNotesOn r4. b4.  |
+  r4. b4. \xNotesOff | 
+  r2. |
+
+  \xNotesOn r4. b4.  |
+  r4. b4. \xNotesOff | 
+  r2. |
+
+  r4. gis( |
+  dis4. gis |
+  b8) r4 r4. |
+
+  b4.( ais4. |
+  gis4.) cis( |
+  dis8) r4 r4. | 
+  
+  \xNotesOn r4._\mp_\markup{\italic sostendo} b4.  |
+  r4. b4. \xNotesOff | 
+  r2. |
+
+  r2.\fermata |
+  gis4-._\p r4 ais8_\mf dis |
+  dis8_\markup{\italic{a tempo}} ais fis fis4.-> |
+
+  \xNotesOn r4. dis'4._\mf |  
+  r4. ais4. \xNotesOff |
+  r2. |
+
+  r8 a(\< a' gis g fis |
+  f8 gis e d dis c |
+  a2.)\! | 
+
+  r2. | 
+  r2. |
+  r2. |
+
+  r2.\fermata |
+}
+
+development_viola = \relative c
+{
+  \clef alto
+  \key b \major
+
+  % Gallop
+
+  e4_\ppp\<_\markup{\italic gallop} gis b |
+  e,4 b' gis |
+  dis4 fis b |
+
+  dis,4 b' fis |
+  e4 gis b |
+  dis, fis b |
+
+  dis4. r4. |
+  f4. r4. |
+  g4. r4. |
+
+  c,4. r4. |
+  cis4. r4. |
+  dis8-._\fff\! r4 r4.\fermata \bar "||"
+
+  % Subordinate
+
+  dis,4-^_\mf r dis'-> |
+  dis,4-^ r dis'-> |
+  dis,4-^ r dis'-> |
+
+  dis,4-^ r dis'-> |
+  dis,4-^ r dis'-> |
+  dis,4-^ r dis'-> |
+
+  dis,4-^ r dis'-> |
+  dis,4-^ r dis'-> |
+  dis,4-^ r dis'-> |
+
+  dis,4-^ r dis'-> |
+  dis,4-^ r dis'-> |
+  dis,4-^ r dis'-> |
+
+  dis,4->_\markup{\italic sostendo}_\mp r dis' |
+  dis,4-> r dis' |
+  dis,4 r dis'-. |
+
+  r2.\fermata |
+  dis,4-._\p r4 r4 |
+  ais'8_\mp_\markup{\italic {a tempo}} fis dis d4.-> |
+  
+  dis4-^_\mf r dis'-> |
+  ais4-^ r ais'-> |
+  gis,4-^ r ais'-> |
+
+  r2. |
+  r2. |
+  r2. |
+
+  g,8\<( ais cis b cis d |
+  e8 f g f g ais  |
+  b2.\!) |
+ 
+  r2.\fermata |
+}
+
+development_cello = \relative c
+{
+  \clef bass
+  \key b \major
+
+  % Gallop
+
+  r2. |
+  r2. |
+  r2. |
+
+  r2. |
+  r2. |
+  r2. |
+
+  a4_\ppp\<_\markup{\italic gallop} c dis |
+  ais4 cis f |
+  dis,4 ais' cis |
+
+  d,4 a' c |
+  ais4 dis cis |
+  gis8_\fff\! r4 r4.\fermata \bar "||"
+
+  % Subordinate
+
+  \xNotesOn dis'4. r4. |
+  dis4. \xNotesOff r4. | 
+  dis16_\markup{\italic energico}_\mf gis b gis b gis dis4.-^ | 
+
+  \xNotesOn dis4. r4. |
+  dis4. \xNotesOff r4. | 
+  dis16 gis b gis b gis dis4.-^ | 
+
+  \xNotesOn dis4. r4. |
+  dis4. \xNotesOff r4. | 
+  dis16 gis b gis b gis dis4.-^ | 
+
+  \xNotesOn dis4. r4. |
+  dis4. \xNotesOff r4. | 
+  dis16 gis b gis b gis dis4.-^ | 
+
+  \xNotesOn dis4._\markup{\italic sostendo}_\mp r4. |
+  dis4. \xNotesOff r4. | 
+  dis16 fis ais fis ais fis dis4.-^ | 
+
+  r2.\fermata |
+  r2. |
+  dis,16_\markup{\italic {a tempo}}_\mf  fis ais fis ais fis f4.-> |
+
+  \xNotesOn dis4. r4. |
+  dis4. \xNotesOff r4. | 
+  dis16 gis b gis b gis c4. |
+
+  r2. |
+  r2. |
+  r2. | 
+
+ 
+  r2. |
+  r2. | 
+  r2. |
+
+  r2.\fermata |
+}
+
+theDevelopment =
+{ \new StaffGroup <<
+
+  \new Staff \with {instrumentName = "Violin I"}  \development_violin_i
+  \new Staff \with {instrumentName = "Violin II"} \development_violin_ii
+  \new Staff \with {instrumentName = "Viola"}     \development_viola
+  \new Staff \with {instrumentName = "Cello"}     \development_cello
+
+  >>
+}
+
+\score
+{
+  \theDevelopment
+  \layout {}
+}
+
