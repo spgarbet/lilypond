@@ -29,7 +29,7 @@ exposition_violin_i = \relative c'''
   c,4-. r2. \bar "!"
   cis4-. r4 c4-. r4 |
 
-  gis,1
+  gis,1_\markup{\italic arco}
   fis1
   e4--->\< r dis---> r
 
@@ -135,7 +135,7 @@ exposition_violin_ii = \relative c'''
   dis4-. r2. \bar "!"
   e4-. r dis-. r |
 
-  dis,1
+  dis,1_\markup{\italic arco}
   cis1
   gis2->\< fis2->  
 
@@ -527,7 +527,7 @@ development_violin_i = \relative c
   fisis8 gis ais gis ais gis |
   dis4\> ais8 fis4.\! |
 
-  r2.\fermata   
+  r2.\fermata  % First Breath 
   r2.
   r2._\markup{\italic{a tempo}} |
 
@@ -543,7 +543,72 @@ development_violin_i = \relative c
   g8( ais b ais b ais\! |
   \slashedGrace{c16} b4_\sfz fis8 dis4.) |
 
-  r2.\fermata |
+  r2.\fermata | % Second Breath
+
+  r2._\markup{\italic rallentando} |
+  r2. |
+  r2. |
+
+  d4.\>_\mf( gis) |
+  cis8( d e d e d |
+  dis4) ais8 fisis4._\pp\!
+
+  dis4_\mf\< a'8 fis4. |
+  a4 dis8 c4. |
+  \slashedGrace {f16(} e8)_\sfz\! b gis~ gis4. |
+
+  % False Endings
+  
+  \slashedGrace {d'16(} cis4)_\mf_\markup{\italic {a tempo}} ais8 f4. |
+  \slashedGrace {c'16(} b4) g8 dis4. |
+  \slashedGrace {a'16(} gis4) f8 d4. |
+
+  r2. |
+  r2. |
+  gis'2.-^_\f |
+
+  r2. |
+  e4.-> e4.-> |
+  cis'8( gis e cis gis e |
+
+  fis2.) |
+  r2. |
+  b4--_\mf dis-- fis-- |
+  
+  gis2.-> |
+  r2. 
+  b,8( a gis ais bis cis |
+  
+  fis2.)-^ |
+  fis4.-^ fis-^ |
+  r4. r4 ais,8( |
+
+  g8 e fis a ais cis |
+  dis8 r8 r8 ais8) r4 |
+  r2. |
+
+  % Final Cadence (drawn out)
+
+  r4. r4 ais8(\<_\mf |
+  gis8 fis gis ais b cis |
+  dis8 cis dis eis fisis gis |
+  
+  ais8_\ff\! gis ais gis ais gis\> |
+  fis8 e dis cis b a |
+  gis8 fis gis fis gis fis |
+
+  ais8_\mp\! gis\< bis ais cis bis |
+  dis8 a cis gis b fis |
+  c'2.-^)\!_\ff |
+
+  cis2.-^\>( |
+  gis2.) |
+  dis4.( cis |
+  
+  bis4._\mp\!) r4 cis8\<( |
+  dis8 cis dis cis dis e |
+  gis2.\!\fermata)--_\f \bar "|." 
+
 }
 
 development_violin_ii = \relative c
@@ -590,7 +655,7 @@ development_violin_ii = \relative c
   r4. b4. \xNotesOff | 
   r2. |
 
-  r2.\fermata |
+  r2.\fermata | % First Breath
   gis4-._\p r4 ais8_\mf dis |
   dis8_\markup{\italic{a tempo}} ais fis fis4.-> |
 
@@ -606,7 +671,71 @@ development_violin_ii = \relative c
   r2. |
   r2. |
 
-  r2.\fermata |
+  r2.\fermata | % Second Breath
+
+  r4_\markup{\italic rallentando} d,_\mf r |
+  d4 r2 |
+  r2. | 
+ 
+  d4-._\mp gis-. d'-. |
+  f4-. g8-. gis-. a-. cis-. |
+  r2. |
+  
+  c,,4-^_\ff c c8 c-^ |
+  r4 c-^ c |
+  b8-. r8 r2 |
+  
+  % False Endings
+
+  \xNotesOn r4._\markup{\italic {a tempo}} ais'4._\mp |  
+  r4. g4. |
+  r4. gis4. \xNotesOff |
+
+  r8 ais\> gis fis e dis\! |   
+  e\< f g gis ais4 |
+  b2.-^\!_\f | 
+
+  r2. |
+  gis4.-> gis4.-> |
+  r2. |
+
+  <b fis'>2. |
+  r2. |
+  gis4--\mf b-- dis-- |
+
+  <cis gis'>2.-> |
+  r2. |
+  r2. |
+
+  dis2.-^ |
+  dis4.-^ dis-^ |
+  r2. |
+
+  r2. |
+  r2 r8 gis( |
+  fis e fis gis ais bis |
+  
+  % Final Cadence (drawn out)
+
+  cis8) r4 gis8 r4 |
+  r2. |
+  r2. |
+
+  r2. |
+  gis4 r2 |
+  gis4 r2 |
+
+  gis2.~ |
+  gis2.~ |
+  gis2.  |
+
+  gis2.~ |
+  gis2.  |
+  r2.    |
+
+  r2.    |
+  r2.    |
+  e2.\fermata \bar "|."
 }
 
 development_viola = \relative c
@@ -654,7 +783,7 @@ development_viola = \relative c
   dis,4-> r dis' |
   dis,4 r dis'-. |
 
-  r2.\fermata |
+  r2.\fermata | % First Breath
   dis,4-._\p r4 r4 |
   ais'8_\mp_\markup{\italic {a tempo}} fis dis d4.-> |
   
@@ -670,7 +799,71 @@ development_viola = \relative c
   e8 f g f g ais  |
   b2.\!) |
  
-  r2.\fermata |
+  r2.\fermata | % Second Breath
+ 
+  r4_\markup{\italic rallentando} a,\downbow c\upbow |
+  a\downbow c\upbow a8(\f dis |
+  gis8 eis cis~ cis4.) |
+
+  d4-^\> r d,-> |
+  d'4-> r d,_\p\! |
+  r2. |
+
+  a'4-^_\ff a a8 a-^ |
+  r4 a-^ a |
+  gis8-. r8 r2 |
+
+  % False Endings
+
+  f4_\mp_\markup{\italic {a tempo}} r ais |
+  dis4 r cis |
+  f4 r d |
+
+  r2. |
+  cis,8\< dis e eis fisis4 |
+  gis2.-^\! |
+
+  r2. |
+  e4.-> e4.-> |
+  r2. |
+
+  fis2. |
+  r2.   |
+  fis4--_\mf gis-- b-- |  
+
+  e2.-> |
+  r2. |
+  r2. |
+
+  b2.-^ |
+  b4.-^ b4.-^ |
+  r2. |
+
+  r2. |
+  r2. |
+  r2. |
+
+  r2. |
+  r2. |
+  r2. |
+
+  % Final Cadence (drawn out)
+  
+  r2. |
+  f4 r2 |
+  dis4 r2 |
+ 
+  gis2.~ |
+  gis2.~ |
+  gis2.  | 
+  
+  <e c'>2.~ |
+  <e c'>2.  |
+  r2. 
+
+  r2.
+  r4 dis-. e-. | 
+  cis2~\fermata cis8_\markup{ \concat {\italic "cheeky" \hspace #1 }} dis8-.-> \bar "|."
 }
 
 development_cello = \relative c
@@ -718,7 +911,7 @@ development_cello = \relative c
   dis4. \xNotesOff r4. | 
   dis16 fis ais fis ais fis dis4.-^ | 
 
-  r2.\fermata |
+  r2.\fermata | % First breath
   r2. |
   dis,16_\markup{\italic {a tempo}}_\mf  fis ais fis ais fis f4.-> |
 
@@ -735,7 +928,71 @@ development_cello = \relative c
   r2. | 
   r2. |
 
-  r2.\fermata |
+  r2.\fermata | % Second breath
+
+  r2._\markup{\italic rallentando} |
+  r2. |
+  cis16_\f\> eis gis eis gis eis gis4. |
+
+  \xNotesOn d4. r4. |
+  d4._\p\! \xNotesOff r4. | 
+  r2. |
+
+  dis,4-^_\ff dis dis8 dis-^ |
+  r4 dis4-^ dis |
+  e8-. r8 r2 |
+
+  % False Endings
+
+  \xNotesOn ais4._\mp_\markup{\italic {a tempo}} r4. |
+  dis4. r |
+  d4. \xNotesOff r | 
+
+  ais4 r dis |
+  dis4 r cis |
+  gis2.-^ |  
+
+  r4. cis16 e gis e gis e |
+  cis4. cis,4. |
+  r2. |
+
+  gis'2. |
+  r2. | 
+  dis'4 fis gis |
+
+  cis,,2. |
+  r2. |
+  r4. cis'16 e gis e gis e |
+
+  gis2. |
+  gis,4. gis | 
+  r2. |
+
+  r2 ais4 |
+  dis2. |
+  r2 gis,4 |
+
+  e2. |
+  r2 fis4 |
+  dis2. |
+
+  % Final Cadence (drawn out)
+
+  r2 gis4 |
+  gis4 r2 |
+  gis4 r2 |
+
+  <gis dis'>2.~ |  
+  <gis dis'>2.~ |
+  <gis dis'>2.  |
+
+  <cis gis'>2.~ |
+  <cis gis'>2.  |
+  r2. |
+
+  r2. |
+  r4 bis-. cis-. |
+  cis,2.\fermata \bar "|."
 }
 
 theDevelopment =
@@ -752,6 +1009,275 @@ theDevelopment =
 \score
 {
   \theDevelopment
+  \layout {}
+}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%
+%% Recap
+
+recap_violin_i = \relative c
+{
+  \tempo "Adagio" 4. = 50
+  \key e \major
+  \clef treble
+  \time 4/4
+
+  \mark "devastating news"
+  \textMark \markup {\italic "dolore"}
+
+  r1 |
+  r1 |
+  r1 |
+
+  r2 r4\fermata r4 |
+  r1 |
+  r1 |
+ 
+  r1 |
+  r1 |
+  d'1~_\pp_\markup{\italic {flautando}} |
+
+  d1 |
+  gis4. r8 gis4. r8 |
+  d1 |
+  
+  r4 r8 b'-._\p_\markup{\italic ord.}\< r2 |
+  r4 r8 a-. r2 |
+  gis1( |
+
+  cis2 e) |
+  cis1\!_\mf~ |
+  cis1\> |
+
+  gis1_\pp\! |
+  r1 |
+
+  % The Duke Interrupts 
+
+  e8-._\mf r16 e8-. r16 e8-. e4 r |
+  e8-. r16 e8-. r16 e8-. e4 r |
+  e8-. r16 e8-. r16 e8-. e4 r |
+
+  dis8_\p( ais' dis fis ais \tuplet 3/2 {b cis dis}) r8 |
+  r1 |
+  cis,,8( gis' cis e gis \tuplet 3/2 {ais bis cis}) r8 |
+
+  r1 |
+  r1 | 
+  r1 |
+
+  cis,4(_\mp gis bis8 cis dis cis |
+  dis8) r e4( dis cis |
+  \repeat tremolo 6 gis8 \repeat tremolo 2 e'8 |
+
+  \repeat tremolo 8 cis8) |
+  r1 |
+  r1 |
+
+  r1 |
+  r1 |
+}
+
+recap_violin_ii = \relative c
+{
+  \key e \major
+  \clef treble
+  \time 4/4
+
+  r1 |
+  r1 |
+  r1 |
+
+  r2 r4\fermata r4 |
+  r1 |
+  r1 |
+
+  e'1~_\p_\markup{\italic {flautando}} |
+  e1 |
+  a,1~ |
+
+  a1 |
+  e'4. r8 e4. r8 |
+  a1 |
+
+  r4 r8 gis8-._\markup{\italic ord.}_\pp\< r2 |
+  r4 r8 f8-. r2 |
+  e1( |
+    
+  gis2 cis2) |
+  b1~_\mf\! |
+  b1\> | 
+
+  dis,1_\pp\! | 
+  r1 |
+
+  % The Duke Interrupts 
+
+  cis8-._\mf r16 cis8-. r16 cis8-. cis4 r |
+  cis8-. r16 cis8-. r16 cis8-. cis4 r |
+  cis8-. r16 cis8-. r16 d8-. cis4 r |
+
+  r1 |
+  d8_\p( a' d f a \tuplet 3/2 {b cis d}) r8 |
+  r1 |
+
+  cis,4(_\mp gis bis8 cis dis cis |
+  dis8) r e4( dis cis |
+  \repeat tremolo 4 fis,8 cis'8-.) r8 r4 |
+
+  gis4( e fis8 gis a gis |
+  a8) r b4( a gis |
+  \repeat tremolo 6 e8 \repeat tremolo 2 cis'8 |
+
+  \repeat tremolo 8 gis8) |
+  r1 |
+  r1 |
+
+  r1 |
+  r1 |
+}
+
+recap_viola = \relative c
+{
+  \key e \major
+  \clef alto
+  \time 4/4
+
+  r1 |
+  r1 |
+  r1 |
+
+  r2 r4\fermata r4 |
+  r1 |
+  r1 |
+ 
+  e1(_\mp_\markup{\italic {flautando}} |
+  g1 |
+  e2 d |
+
+  cis2) r4 d( |
+  e4 d e f |
+  g2 cis,) |
+
+  gis'1_\mp\<_\markup{\italic ord.} |
+  f1 |
+  cis1( |
+
+  e2 gis) |
+  g1(_\f\! |
+  a2)\> cis4( b |
+
+  a4 gis2) r4 |
+  gis4(_\p\! ais c2) |
+
+  % The Duke Interrupts 
+  
+  gis8-._\mf r16 gis8-. r16 fis8-. gis4 r |
+  gis8-. r16 gis8-. r16 fis8-. gis4 r |
+  gis8-. r16 gis8-. r16 fisis8-. gis4 r |
+
+  r1 |
+  r1 | 
+  r1 |
+
+  gis4_\mp gis' gis, gis' |
+  gis,4 gis' gis, gis' |
+  \repeat tremolo 4 fis8~ fis8 r8 r4 |
+
+  r1 |
+  r1 |
+  r1 |
+
+  r1 |
+  dis2._\p(_\markup{\italic crescendo} fis4~ |
+  fis4 ais bis) cis8( dis |
+
+  \tuplet 3/2 {c8_\markup{\italic calando} b a-.)} g16 f e-. r d c b-. r ais b c-. r |
+  r1 \bar "|."
+
+}
+
+recap_cello = \relative c
+{
+  \key e \major
+  \clef bass
+  \time 4/4
+
+
+  cis1_\pp(_\markup {\italic {col legno stratto}} |
+  g1_\ppp | 
+  e2 d |
+
+  cis2) r4\fermata d(_\markup{\italic {flautando}}\< |
+  e4 d e f |
+  gis2 d2) |
+
+  cis1~\!_\mp |
+  cis1
+  d1~ |
+
+  d1  |
+  cis'4. r8 cis4. r8 |
+  d,1 |
+
+  e'1_\mp\<_\markup{\italic ord.}( |
+  d1 |
+  cis1~ |
+
+  cis1) |
+  g1(_\f\!   |
+  g1)\>   |
+
+  c1    |
+  gis1_\p\! |
+
+  % The Duke Interrupts 
+
+  %b8.-._\mf b8.-. r8 r2 |
+  %b8.-. b8.-. r8 r2 |
+  %cis8.-. cis8.-. r8 r2 |
+  
+  b8-._\mf r16 b8-. r16 r8 r2 |
+  b8-. r16 b8-. r16 r8 r2 |
+  b8-. r16 b8-. r16 r8 r2 |
+
+  r1 | 
+  r1 | 
+  r1 | 
+
+  % Subordinate returns
+  
+  r1 |
+  r1 |
+  r1 |
+
+  gis4_\mp gis' gis, gis' | 
+  gis,4 gis' fis gis |
+  e4 gis dis \repeat tremolo 2 gis8~ |
+
+  \repeat tremolo 8 gis8 |
+  dis1_\p_\markup{\italic crescendo}~ |
+  dis1 |
+  
+  d2._\markup{\italic calando} r4 |
+  cis-._\ppp r2. \bar "|." 
+}
+
+theRecap = 
+{ \new StaffGroup <<
+
+  \new Staff \with {instrumentName = "Violin I"}  \recap_violin_i
+  \new Staff \with {instrumentName = "Violin II"} \recap_violin_ii
+  \new Staff \with {instrumentName = "Viola"}     \recap_viola
+  \new Staff \with {instrumentName = "Cello"}     \recap_cello
+
+  >>
+}
+
+\score
+{
+  \theRecap
   \layout {}
 }
 
