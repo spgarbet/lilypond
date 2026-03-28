@@ -19,7 +19,7 @@ exposition_violin_i = \relative c'''
 
   % Opening Sentence 
 
-  \mark "tracking shot of residents"
+  \mark "tracking shot"
 
   <<cis4 gis'4-._\markup{\italic pizz.}_\mp>> r2. \bar "!"
   c,4-. r2. \bar "!"
@@ -485,7 +485,7 @@ development_violin_i = \relative c
   \clef treble
   \time 6/8
 
-  \mark "a messenger arrives"
+  \mark "messenger arrives"
 
   % Gallop
 
@@ -1018,12 +1018,12 @@ theDevelopment =
 
 recap_violin_i = \relative c
 {
-  \tempo "Adagio" 4. = 50
+  \tempo "Adagio" 4 = 50
   \key e \major
   \clef treble
   \time 4/4
 
-  \mark "devastating news"
+  \mark "nuntium calamitosum"
   \textMark \markup {\italic "dolore"}
 
   r1 |
@@ -1278,6 +1278,375 @@ theRecap =
 \score
 {
   \theRecap
+  \layout {}
+}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%
+%% Coda
+
+spacerVoice = \new Voice 
+{
+  \override MultiMeasureRest.transparent = ##t
+  \override MultiMeasureRest.minimum-length = #16
+  R2.
+}
+
+coda_violin_i = \relative c
+{
+  \tempo "Andante" 4 = 90
+  \key e \major
+  \clef treble
+  \time 4/4
+
+  \mark "amor fati"
+
+  fis'8-._\markup{\italic pizz.}_\mp r8 r4 r2 |
+  \slashedGrace {e16-.(} fis8)-._\markup{\italic testing} r \slashedGrace {e16-.(} fis8)-. r r4. r16 fis16-. |
+  e16-. fis-. gis-. a-. r2. |
+
+  r1 |
+  gis16-. gis16-. r8 r2 r8. gis16-. |
+  fis16-. gis-. a-. b-. r2 r8 fis-.\< |
+
+  gis8-. fis-. gis-. a-. cis4-. fis-. |
+  cis'2-._\mf\! gis-.\> |
+  e4-. dis-. cis-.\! r |
+
+  r2 cis'2_\markup{\italic arco}  |
+  a1 |
+  a4(_\mf\> gis fis)\! r4 |
+
+  % New Life
+
+  dis1_\mp_\markup{\italic {con brio}} |
+  eis1 |
+  dis2 eis |
+  
+  fis1 |
+  e1 |
+  d2 cis |
+  
+  b1 |
+  b1 |
+  r2. r4\fermata |
+ 
+  % Ball
+ 
+  \time 3/4
+
+  r2._\markup{\italic {poco rit.}} |
+  r2. |
+
+  % First round of 3
+  r4 gis'-._\markup{\italic pizz.}_\p gis-. |
+  r4 ais-. ais-. |
+  r4 b-. b-. |
+  r4 a-. a-. |
+  
+  r4 gis-. gis-. |
+  r4 ais-. ais-. |
+  r4 b-. b-. |
+  r4 a-. a-. |
+
+  \slashedGrace {d8(} cis4_\markup{\italic arco}_\mf gis bis |
+  e8 fis e \slashedGrace {a8} fis-.) r4 |
+  \slashedGrace {e8(} dis4 cis b |
+  gis2) \slashedGrace {a8} dis-.-> r8 | 
+ 
+  % Second round of 3
+  \slashedGrace {cis,16( d)} cis4(\< gis bis |
+  cis8 dis cis \slashedGrace {f8} dis-.)\! r4 |
+  \slashedGrace {e8(} dis4\> d8 dis ais' cis, |
+  gis2.)\! |
+
+  r8 cis,8(_\ff\> \tuplet 3/2 {cis''8 c b} \tuplet 5/2 {ais8 gis cis g f~} |
+  f8 fis dis cis d b |
+  a4 gis fis |
+  e2._\startTrillSpan |
+
+  dis8\stopTrillSpan)_\mp\!  r8 r4 bis''4-._\markup{\italic pizz.}_\p |
+  r2 gis4-. |
+  r2 ais4-. |
+  r4 a4-. r |
+
+  % Cadence
+
+  r2 cis4~_\mp_\markup{\italic arco} |
+  cis4 r2 |
+  cis2 gis4 |
+  << {<cis, gis'>2.->} \new Voice { \override Hairpin.stencil = #flared-hairpin
+     s8_\< s8 s8 s8 s8 s8\!}
+     \spacerVoice
+  >> 
+  \bar "|."
+}
+
+coda_violin_ii = \relative c
+{
+  \key e \major
+  \clef treble
+  \time 4/4
+
+  r1 |
+  r1 |
+  r1 |
+
+  r1 |
+  r1 |
+  r1 |
+
+  r1 |
+  r1 |
+  r2. r8 cis''8(_\mp_\markup{\italic agreement} |
+
+  dis8 cis8 dis e gis4 dis) |
+  cis2(_\mf\> a2)\! | 
+  e4_\mf(->\> dis cis)\! r |  
+
+  % New Life
+
+  a'1_\mp_\markup{\italic {con brio}} |
+  bis1 |
+  a2 bis |
+
+  cis1 |
+  c1 |
+  b2 b2 |
+
+  gis1 |
+  a1 |
+  r2. r4\fermata |
+
+  % Ball
+  \time 3/4
+
+  r2._\markup{\italic {poco rit.}} |
+  r2. |
+
+  % First round of 3
+  r4 e'-._\markup{\italic pizz.}_\p e-. |
+  r4 fis-. fis-. |
+  r4 fis-. fis-. |
+  r4 e-. e-. |
+
+  \slashedGrace {d8(} cis4_\mf_\markup{\italic arco} gis bis |
+  e8 fis e \slashedGrace {a8} fis-.) r4 |
+  \slashedGrace {e8(} dis4 cis b |
+  gis2) \slashedGrace {a8} dis-.-> r8 | 
+
+  r4.  \slashedGrace {d8(} cis4_\mp gis8~ |
+  gis8 bis4 e8 fis e \slashedGrace {a8} |
+  fis8-.) r4 \slashedGrace {e8(} dis4 cis8~ |
+  cis8 b4 gis8) r4 | 
+
+  % Second round of 3
+  r4 r gis'-._\markup{\italic pizz.}_\p  |
+  r4 r ais-. |
+  r4 r b-. |
+  r4 r gis-. |
+
+  r4 r gis-.  |
+  r4 r ais-. |
+  r4 r a-. |
+  r4 r r |
+
+  r4 gis4-. r |
+  r4 eis4-. r |
+  r4 fis4-. r |
+  r4 fis4-. r |
+
+  % Cadence
+  r2 b,4~_\markup{\italic arco}_\mp |
+  b4 r2 |
+  b2 dis,4 |
+  << {gis2.->} \new Voice { \override Hairpin.stencil = #flared-hairpin
+     s8_\< s8 s8 s8 s8 s8\!}>>   \bar "|."
+}
+
+coda_viola = \relative c
+{
+  \key e \major
+  \clef alto
+  \time 4/4
+
+  r1 |
+  r1 |
+  r2 g'2_\fff--_\markup{NO} |
+
+  r1 |
+  r1 |
+  r2 r8 fis4._\pp_\markup{\italic maybe} |
+
+  r2 cis'4 gis4 |
+  r1 |
+  r1 |
+
+  cis2_\mp r2 |
+  a1 |
+  a'1 |
+
+  % New Life
+  
+  gis2_\markup{\italic {con brio}}_\mf-^\>( e2)\! |
+  bis'4(->\> ais gis)\! r8 ais(\< |
+  gis8 fis gis ais bis4 gis)\! | 
+
+  gis8-^\> fis gis a b4\! gis |
+  fis8->\> e fis gis a4\! fis\< |
+  e4( b'-.) e,( a-.)\! |
+
+  c,2-^\>( e4 gis\!) |
+  g2-> a4\< cis8( b |
+  a8 gis4) r8 fis8( e dis4)\fermata\!_\f |
+
+  % Ball
+
+  \time 3/4
+  
+  r2._\markup{\italic {poco rit.}} |
+  r2. |
+  
+  % First round of 3
+  \slashedGrace {d8(} cis4_\mf gis bis |
+  e8 fis e \slashedGrace {a8} fis-.) r4 |
+  \slashedGrace {e8(} dis4 cis b |
+  gis2) \slashedGrace {a8} dis8-.-> r8 | 
+
+  r4 e-._\markup{\italic pizz.}_\p e-. |
+  r4 fis-. fis-. |
+  r4 fis-. fis-. |
+  r4 e-. e-. |
+
+  r4 e-. e-. |
+  r4 fis-. fis-. |
+  r4 fis-. fis-. |
+  r4 e-. r |
+
+  % Second round of 3
+
+  r4 e-. r |
+  r4 fis-. r |
+  r4 fis-. r |
+  r4 e-. r |
+
+  r4 e-. r |
+  r4 fis-. r |
+  r4 fis-. r |
+  r4 e-. r |
+
+  dis,8(_\markup{\italic arco}\< gis \tuplet 3/2 {c ais b} \tuplet 5/2 {c cis d dis f~_\f\!} 
+  f8\> g f fis dis cis |
+  d4 bis ais)_\mf\! |
+  fis8_\mp e8 dis2 |
+
+  % Cadence
+
+  r4 gis8( fis e4~ |
+  e4) r4 a8( gis |
+  fis4) gis8( ais bis4) |
+
+  << {e2.->} \new Voice { \override Hairpin.stencil = #flared-hairpin
+     s8_\< s8 s8 s8 s8 s8\!}>>   \bar "|."
+   
+}
+
+coda_cello = \relative c
+{
+  \key e \major
+  \clef bass
+  \time 4/4
+
+  r1 |
+  r1 |
+  r2 g2_\fff--_\markup{NO} |
+
+  r1 |
+  r1 |
+  r1 |
+ 
+  r1 |
+  b1_\markup{\italic reluctant}_\pp\< |
+  a1 |
+
+  gis1 |
+  fis1 |
+  fis'1_\mp\! |
+
+  % New Life
+
+  gis1_\mp_\markup{\italic {con brio}} |
+  a1   |
+  gis2 a2 |
+
+  b1   |
+  c1   |
+  gis2 e2 |
+
+  e1 |
+  e1 |
+  r2. r4\fermata |
+
+  % Ball
+
+  \time 3/4
+
+  cis,4->_\markup{\italic {poco rit.}}_\mp <cis' gis'>4-. <cis gis'>-. |
+  fis,4-> <cis' ais'>4-. <cis ais'>-. |
+
+  % First round of 3
+  cis,4-> <cis' gis'>4-. <cis gis'>-. |
+  fis,4-> <cis' ais'>4-. <cis ais'>-. |
+  b4-> <dis b'>-. <dis b'>-. |
+  e,4-> <b' gis'>-. <b gis'>-. |
+
+  cis,4-> <cis' gis'>4-. <cis gis'>-. |
+  fis,4-> <cis' ais'>4-. <cis ais'>-. |
+  b4-> <dis b'>-. <dis b'>-. |
+  e,4-> <b' gis'>-. <b gis'>-. |
+
+  cis,4-> <cis' gis'>4-. <cis gis'>-. |
+  fis,4-> <cis' ais'>4-. <cis ais'>-. |
+  b4-> <dis b'>-. <dis b'>-. |
+  e,4-> <b' gis'>-. r |
+
+  % Second round of 3
+  cis,4-> r2 |
+  fis4-> r2 |
+  b4-> r2 | 
+  e,4-> r2 |
+
+  cis2. |
+  fis2. |
+  b2. | 
+  e,2 r4 |
+
+  \repeat tremolo 12 gis16\< |
+  \repeat tremolo 12 cis16\! |
+  \repeat tremolo 12 f16\> |
+  b,4\!_\mp b'4 r |
+
+  r2 e,4~ |
+  e4 r2 |
+  e2 bis4 | 
+  << {cis,2.->} \new Voice { \override Hairpin.stencil = #flared-hairpin
+     s8_\< s8 s8 s8 s8 s8\!}>>   \bar "|."
+}
+
+theCoda = 
+{ \new StaffGroup <<
+
+  \new Staff \with {instrumentName = "Violin I"}  \coda_violin_i
+  \new Staff \with {instrumentName = "Violin II"} \coda_violin_ii
+  \new Staff \with {instrumentName = "Viola"}     \coda_viola
+  \new Staff \with {instrumentName = "Cello"}     \coda_cello
+
+  >>
+}
+
+\score
+{
+  \theCoda
   \layout {}
 }
 
