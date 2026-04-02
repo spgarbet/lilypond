@@ -1,14 +1,41 @@
 \version "2.24.3"
 
+#(set-default-paper-size "arch a")
+
 \header
 {
-  title     = "Gormenghast 2077"
-  subtitle  = "Sonata No 1 Op 2"
-  composer  = "Composed by Shawn Garbett"
-  arranger  = "Arranged by Shawn Garbett and Buffy Rhea"
-  tagline   = ""
-  midititle = "gormenghast_quartet.midi"
+  title      = "Gormenghast 2077"
+  subtitle   = "Sonata in C# minor, Op. 2 for String Quartet"
+  composer   = "Shawn Garbett"
+  arranger   = "Arr. by Shawn Garbett, Buffy Rhea"
+  tagline    = "Gormenghast 2077 "
+  midititle  = "gormenghast_quartet.midi"
+  copyright  = "Copyright © 2026 Shawn Garbett, All rights reserved"
 }
+
+#(define (not-first-page layout props arg)
+  (if (> (chain-assoc-get 'page:page-number props 0) 1)
+       (interpret-markup layout props arg)
+       empty-stencil))
+
+\paper
+{
+  oddFooterMarkup =
+    \markup
+    \fontsize #-2
+    \fill-line
+    {
+      \on-the-fly #not-first-page \fromproperty #'header:title
+
+      \fromproperty #'header:copyright
+    }
+
+  evenFooterMarkup = \oddFooterMarkup
+}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%
+%% Exposition
 
 exposition_violin_i = \relative c''' 
 {
@@ -121,6 +148,7 @@ exposition_violin_i = \relative c'''
 
 exposition_violin_ii = \relative c''' 
 {
+  \tempo "Gemendo" 4 = 120
   \key cis \minor
   \clef treble
   \time 4/4
@@ -232,6 +260,7 @@ exposition_violin_ii = \relative c'''
 
 exposition_viola = \relative c'
 {
+  \tempo "Gemendo" 4 = 120
   \key cis \minor
   \clef alto
   \time 4/4
@@ -342,6 +371,7 @@ exposition_viola = \relative c'
 
 exposition_cello = \relative c
 {
+  \tempo "Gemendo" 4 = 120
   \key cis \minor
   \clef bass
   \time 4/4
@@ -613,8 +643,10 @@ development_violin_i = \relative c
 
 development_violin_ii = \relative c
 {
+  \tempo "Allegro" 4. = 140
   \clef treble
   \key b \major
+  \time 6/8
 
   % Gallop
 
@@ -740,8 +772,10 @@ development_violin_ii = \relative c
 
 development_viola = \relative c
 {
+  \tempo "Allegro" 4. = 140
   \clef alto
   \key b \major
+  \time 6/8
 
   % Gallop
 
@@ -868,8 +902,10 @@ development_viola = \relative c
 
 development_cello = \relative c
 {
+  \tempo "Allegro" 4. = 140
   \clef bass
   \key b \major
+  \time 6/8
 
   % Gallop
 
@@ -1012,6 +1048,12 @@ theDevelopment =
   \layout {}
 }
 
+\score
+{
+  \unfoldRepeats{ \theDevelopment }
+  \midi {}
+}
+
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  %%
 %% Recap
@@ -1081,6 +1123,7 @@ recap_violin_i = \relative c
 
 recap_violin_ii = \relative c
 {
+  \tempo "Adagio" 4 = 50
   \key e \major
   \clef treble
   \time 4/4
@@ -1136,10 +1179,12 @@ recap_violin_ii = \relative c
 
   r1 |
   r1 |
+  \bar "|."
 }
 
 recap_viola = \relative c
 {
+  \tempo "Adagio" 4 = 50
   \key e \major
   \clef alto
   \time 4/4
@@ -1200,6 +1245,7 @@ recap_viola = \relative c
 
 recap_cello = \relative c
 {
+  \tempo "Adagio" 4 = 50
   \key e \major
   \clef bass
   \time 4/4
@@ -1281,6 +1327,12 @@ theRecap =
   \layout {}
 }
 
+\score
+{
+  \unfoldRepeats{ \theRecap }
+  \midi {}
+}
+
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  %%
 %% Coda
@@ -1288,7 +1340,7 @@ theRecap =
 spacerVoice = \new Voice 
 {
   \override MultiMeasureRest.transparent = ##t
-  \override MultiMeasureRest.minimum-length = #16
+  \override MultiMeasureRest.minimum-length = #10
   R2.
 }
 
@@ -1325,7 +1377,7 @@ coda_violin_i = \relative c
   
   fis1 |
   e1 |
-  d2 cis |
+  dis2 cis |
   
   b1 |
   b1 |
@@ -1384,6 +1436,7 @@ coda_violin_i = \relative c
 
 coda_violin_ii = \relative c
 {
+  \tempo "Andante" 4 = 90
   \key e \major
   \clef treble
   \time 4/4
@@ -1461,11 +1514,15 @@ coda_violin_ii = \relative c
   b4 r2 |
   b2 dis,4 |
   << {gis2.->} \new Voice { \override Hairpin.stencil = #flared-hairpin
-     s8_\< s8 s8 s8 s8 s8\!}>>   \bar "|."
+     s8_\< s8 s8 s8 s8 s8\!}
+     \spacerVoice
+  >> 
+  \bar "|."
 }
 
 coda_viola = \relative c
 {
+  \tempo "Andante" 4 = 90
   \key e \major
   \clef alto
   \time 4/4
@@ -1547,12 +1604,16 @@ coda_viola = \relative c
   fis4) gis8( ais bis4) |
 
   << {e2.->} \new Voice { \override Hairpin.stencil = #flared-hairpin
-     s8_\< s8 s8 s8 s8 s8\!}>>   \bar "|."
+     s8_\< s8 s8 s8 s8 s8\!}
+     \spacerVoice
+  >> 
+  \bar "|."
    
 }
 
 coda_cello = \relative c
 {
+  \tempo "Andante" 4 = 90
   \key e \major
   \clef bass
   \time 4/4
@@ -1581,7 +1642,7 @@ coda_cello = \relative c
 
   b1   |
   c1   |
-  gis2 e2 |
+  e,2 e2 |
 
   e1 |
   e1 |
@@ -1629,8 +1690,11 @@ coda_cello = \relative c
   r2 e,4~ |
   e4 r2 |
   e2 bis4 | 
-  << {cis,2.->} \new Voice { \override Hairpin.stencil = #flared-hairpin
-     s8_\< s8 s8 s8 s8 s8\!}>>   \bar "|."
+  << {cis2.->} \new Voice { \override Hairpin.stencil = #flared-hairpin
+     s8_\< s8 s8 s8 s8 s8\!}
+     \spacerVoice
+  >> 
+  \bar "|."
 }
 
 theCoda = 
@@ -1649,4 +1713,38 @@ theCoda =
   \theCoda
   \layout {}
 }
+
+\score
+{
+  \unfoldRepeats{ \theCoda }
+  \midi {}
+}
+
+% Violin 1
+\pageBreak
+\score { \new Staff \with {instrumentName = "Violin I"} \exposition_violin_i \layout {} }
+\score { \new Staff \with {instrumentName = "Violin I"} \development_violin_i \layout {} }
+\score { \new Staff \with {instrumentName = "Violin I"} \recap_violin_i \layout {} }
+\score { \new Staff \with {instrumentName = "Violin I"} \coda_violin_i \layout {} }
+
+% Violin 2
+\pageBreak
+\score { \new Staff \with {instrumentName = "Violin II"} {\mark "tracking shot" \exposition_violin_ii} \layout {} }
+\score { \new Staff \with {instrumentName = "Violin II"} {\mark "messenger arrives" \development_violin_ii} \layout {} }
+\score { \new Staff \with {instrumentName = "Violin II"} {\mark "nuntium calamitosum" \recap_violin_ii} \layout {} }
+\score { \new Staff \with {instrumentName = "Violin II"} {\mark "amor fati" \coda_violin_ii} \layout {} }
+
+% Viola
+\pageBreak
+\score { \new Staff \with {instrumentName = "Viola"}  {\mark "tracking shot" \exposition_viola} \layout {} }
+\score { \new Staff \with {instrumentName = "Viola"} {\mark "messenger arrives" \development_viola} \layout {} }
+\score { \new Staff \with {instrumentName = "Viola"} {\mark "nuntium calamitosum" \recap_viola} \layout {} }
+\score { \new Staff \with {instrumentName = "Viola"} {\mark "amor fati" \coda_viola} \layout {} }
+
+% Cello
+\pageBreak
+\score { \new Staff \with {instrumentName = "Cello"}  {\mark "tracking shot" \exposition_cello} \layout {} }
+\score { \new Staff \with {instrumentName = "Cello"} {\mark "messenger arrives" \development_cello} \layout {} }
+\score { \new Staff \with {instrumentName = "Cello"} {\mark "nuntium calamitosum" \recap_cello} \layout {} }
+\score { \new Staff \with {instrumentName = "Cello"} {\mark "amor fati" \coda_cello} \layout {} }
 

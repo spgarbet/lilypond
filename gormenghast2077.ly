@@ -999,7 +999,7 @@ coda_treble = \relative c'
 
   <gis cis fis>1  \bar "!" % B13
   <a c e>1 \bar "!"  % F#dim
-  <gis b d>2 <e b' cis> | % E M7, F# (#11)
+  <gis b dis>2 <e b' cis> | % E M7, F# (#11)
 
   <e gis b>1 \bar "!"
   <e a b>1 \bar "!" 
