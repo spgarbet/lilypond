@@ -515,7 +515,7 @@ theExposition =
 %%
 development_violin_i = \relative c
 {
-  \tempo "Allegro" 4. = 140
+  \tempo "Gallop" 4. = 140
   \key b \major
   \clef treble
   \time 6/8
@@ -524,39 +524,39 @@ development_violin_i = \relative c
 
   % Gallop
 
-  e'''2.-^_\ppp\<_\markup{\italic gallop}     |
-  b         |
-  fis4.-> e |
+  e'''8-^_\ppp\<_\markup{\italic {strum bowing}}^\downbow e e e e e |
+  b8->^\downbow b b b b b         |
+  fis8->\downbow fis fis e->\upbow e e |
 
-  dis4. r8 e fis |
-  e8 fis e fis gis4 |
-  b4. fis |
+  dis8->\downbow dis dis r8 e->\downbow fis->\upbow |
+  e8->\downbow fis->\upbow e->\downbow fis->\upbow gis->\downbow gis |
+  b8->\downbow b b fis->\upbow fis fis |
  
-  dis2.-^   |
-  ais'      |
-  f4.-> dis |
+  dis8-^\downbow dis dis dis dis dis   |
+  ais'8->\downbow ais ais ais ais ais  |
+  f8->\downbow f f dis\upbow dis dis |
  
-  d4. r8 dis f |
-  dis f dis f g4 |
-  gis8-._\fff\! r4 r4.^\fermata \bar "||"
+  d8->\downbow d d r8 dis->\downbow f->\upbow |
+  dis->\downbow f->\upbow dis->\downbow f->\upbow g8->\downbow g8 |
+  gis8-._\fff\!\downbow r4 r4.^\fermata \bar "||"
 
   % Subordinate
 
-  gis4.(_\mf dis) |
-  fisis8( gis ais gis ais gis |
-  ais8) r4 b4.( |
+  gis8-^_\mf\downbow gis gis dis->\upbow dis dis |
+  fisis8->\downbow gis->\upbow ais->\downbow gis->\upbow ais->\downbow gis->\upbow |
+  ais8->\downbow r4 b8->\upbow b b |
   
-  ais4. gis) |
-  cis2.( |
-  gis8) r4 r4. 
+  ais8->\downbow ais ais gis->\upbow gis gis |
+  cis8->\downbow cis cis cis cis cis |
+  gis8->\downbow r4 r4. 
 
-  gis4.( dis) |
-  fisis8( gis ais gis ais gis |
-  ais8) r4 b4.( |
+  gis8->\downbow gis gis dis->\upbow dis dis |
+  fisis8->\downbow gis->\upbow ais->\downbow gis->\upbow ais->\downbow gis->\upbow |
+  ais8->\downbow r4 b8->\upbow b b |
   
-  ais4. gis) |
-  cis2.( |
-  gis8) r4 r4. 
+  ais8->\downbow ais ais gis->\upbow gis gis |
+  cis->\downbow cis cis cis cis cis |
+  gis8->\downbow r4 r4._\markup{\italic arco} 
 
   gis4._\mp_\markup{\italic sostendo} dis |
   fisis8 gis ais gis ais gis |
@@ -624,7 +624,7 @@ development_violin_i = \relative c
 
   % Final Cadence (drawn out)
 
-  r4. r4 ais8(\<_\mf |
+  r4. r4 ais8(\<_\mf_\markup{\italic acceso} |
   gis8 fis gis ais b cis |
   dis8 cis dis eis fisis gis |
   
@@ -648,7 +648,7 @@ development_violin_i = \relative c
 
 development_violin_ii = \relative c
 {
-  \tempo "Allegro" 4. = 140
+  \tempo "Gallop" 4. = 140
   \clef treble
   \key b \major
   \time 6/8
@@ -663,41 +663,41 @@ development_violin_ii = \relative c
   r2. |
   r2. |
 
-  c''2.->_\ppp\<_\markup{\italic gallop} | 
-  cis2.  |
-  cis4.-> g |  
+  c''8-^_\ppp\<_\markup{\italic {strum bowing}}-^\downbow c c c c c | 
+  cis8->\downbow cis cis cis cis cis  |
+  cis8->\downbow cis cis g->\upbow g g |  
 
-  fis4. r8  g cis |
-  g8 cis g cis dis4 |
-  dis8-._\fff\! r4 r4.\fermata \bar "||"
+  fis8->\downbow fis fis r8  g->\downbow cis->\upbow |
+  g8->\downbow cis->\upbow g->\downbow cis->\upbow dis8->\downbow dis |
+  dis8-._\fff\!\downbow r4 r4.\fermata \bar "||"
 
   % Subordinate
-  \xNotesOn r4. b4.  |
-  r4. b4. \xNotesOff | 
+  r4. b8->\upbow b b  |
+  r4. b8->\upbow b b  | 
   r2. |
 
-  \xNotesOn r4. b4.  |
-  r4. b4. \xNotesOff | 
+  r4. b8->\upbow b b  |
+  r4. b8->\upbow b b  | 
   r2. |
 
-  r4. gis( |
-  dis4. gis |
-  b8) r4 r4. |
+  r4. gis8->\upbow gis gis |
+  dis8->\downbow dis dis gis->\upbow gis gis  |
+  b8->\downbow r4 r4. |
 
-  b4.( ais4. |
-  gis4.) cis( |
-  dis8) r4 r4. | 
+  b8->\downbow b b ais->\upbow ais ais |
+  gis8->\downbow gis gis cis->\upbow cis cis |
+  dis8->\downbow r4 r4. | 
   
-  \xNotesOn r4._\mp_\markup{\italic sostendo} b4.  |
-  r4. b4. \xNotesOff | 
-  r2. |
+  r4. b8->\upbow b b  |
+  r4. b8->\upbow b b  | 
+  r2._\markup{\italic arco} |
 
   r2.\fermata | % First Breath
-  gis4-._\p r4 ais8_\mf dis |
-  dis8_\markup{\italic{a tempo}} ais fis fis4.-> |
+  gis4-._\p r4 ais8_\mf_\markup{\italic sostendo} dis |
+  dis8_\markup{\italic{a tempo}} ais fis fis8-> r4 |
 
-  \xNotesOn r4. dis'4._\mf |  
-  r4. ais4. \xNotesOff |
+  r4. dis'8_\mf-. r4 |  
+  r4. ais8-. r4  |
   r2. |
 
   r8 a(\< a' gis g fis |
@@ -724,9 +724,9 @@ development_violin_ii = \relative c
   
   % False Endings
 
-  \xNotesOn r4._\markup{\italic {a tempo}} ais'4._\mp |  
-  r4. g4. |
-  r4. gis4. \xNotesOff |
+  r4._\markup{\italic {a tempo}} ais'4._\mp-. |  
+  r4. g4.-. |
+  r4. gis4.-. |
 
   r8 ais\> gis fis e dis\! |   
   e\< f g gis ais4 |
@@ -777,7 +777,7 @@ development_violin_ii = \relative c
 
 development_viola = \relative c
 {
-  \tempo "Allegro" 4. = 140
+  \tempo "Gallop" 4. = 140
   \clef alto
   \key b \major
   \time 6/8
@@ -907,7 +907,7 @@ development_viola = \relative c
 
 development_cello = \relative c
 {
-  \tempo "Allegro" 4. = 140
+  \tempo "Gallop" 4. = 140
   \clef bass
   \key b \major
   \time 6/8
@@ -932,32 +932,32 @@ development_cello = \relative c
 
   % Subordinate
 
-  \xNotesOn dis'4. r4. |
-  dis4. \xNotesOff r4. | 
-  dis16_\markup{\italic energico}_\mf gis b gis b gis dis4.-^ | 
+  dis'4. r4. |
+  dis4. r4. | 
+  dis16_\markup{\italic energico}_\mf gis b gis b gis dis'4.-^ | 
 
-  \xNotesOn dis4. r4. |
-  dis4. \xNotesOff r4. | 
-  dis16 gis b gis b gis dis4.-^ | 
+  dis,4. r4. |
+  dis4. r4. | 
+  dis16 gis b gis b gis dis'4.-^ | 
 
-  \xNotesOn dis4. r4. |
-  dis4. \xNotesOff r4. | 
-  dis16 gis b gis b gis dis4.-^ | 
+  dis,4. r4. |
+  dis4. r4. | 
+  dis16 gis b gis b gis dis'4.-^ | 
 
-  \xNotesOn dis4. r4. |
-  dis4. \xNotesOff r4. | 
-  dis16 gis b gis b gis dis4.-^ | 
+  dis,4. r4. |
+  dis4. r4. | 
+  dis16 gis b gis b gis dis'4.-^ | 
 
-  \xNotesOn dis4._\markup{\italic sostendo}_\mp r4. |
-  dis4. \xNotesOff r4. | 
-  dis16 fis ais fis ais fis dis4.-^ | 
+  dis,4._\markup{\italic sostendo}_\mp r4. |
+  dis4. r4. | 
+  dis16 fis ais fis ais fis dis'4.-^ | 
 
   r2.\fermata | % First breath
   r2. |
-  dis,16_\markup{\italic {a tempo}}_\mf  fis ais fis ais fis f4.-> |
+  dis,,16_\markup{\italic {a tempo}}_\mf  fis ais fis ais fis f4.-> |
 
-  \xNotesOn dis4. r4. |
-  dis4. \xNotesOff r4. | 
+  dis4. r4. |
+  dis4. r4. | 
   dis16 gis b gis b gis c4. |
 
   r2. |
@@ -975,8 +975,8 @@ development_cello = \relative c
   r2. |
   cis16_\f\> eis gis eis gis eis gis4. |
 
-  \xNotesOn d4. r4. |
-  d4._\p\! \xNotesOff r4. | 
+  d4. r4. |
+  d4._\p\! r4. | 
   r2. |
 
   dis,4-^_\ff dis dis8 dis-^ |
@@ -985,9 +985,9 @@ development_cello = \relative c
 
   % False Endings
 
-  \xNotesOn ais4._\mp_\markup{\italic {a tempo}} r4. |
+  ais4._\mp_\markup{\italic {a tempo}} r4. |
   dis4. r |
-  d4. \xNotesOff r | 
+  d4. r | 
 
   ais4 r dis |
   dis4 r cis |
