@@ -2,17 +2,6 @@
 
 #(set-default-paper-size "arch a")
 
-\header
-{
-  title      = "Gormenghast 2077"
-  subtitle   = "Sonata in C# minor, Op. 2 for String Quartet"
-  composer   = "Shawn Garbett"
-  arranger   = "Arr. by Shawn Garbett, Buffy Rhea"
-  tagline    = "Gormenghast 2077 "
-  midititle  = "gormenghast_quartet.midi"
-  copyright  = "Copyright © 2026 Shawn Garbett, All rights reserved"
-}
-
 #(define (not-first-page layout props arg)
   (if (> (chain-assoc-get 'page:page-number props 0) 1)
        (interpret-markup layout props arg)
@@ -31,6 +20,22 @@
     }
 
   evenFooterMarkup = \oddFooterMarkup
+
+  top-margin    = 0.5\in
+  bottom-margin = 0.5\in
+  left-margin   = 0.5\in
+  right-margin  = 0.5\in
+}
+
+\header
+{
+  title      = "Gormenghast 2077"
+  subtitle   = "Sonata in C# minor, Op. 2 for String Quartet"
+  composer   = "Shawn Garbett"
+  arranger   = "Arr. by Shawn Garbett, Buffy Rhea"
+  tagline    = "Gormenghast 2077 "
+  midititle  = "gormenghast_quartet.midi"
+  copyright  = "Copyright © 2026 Shawn Garbett, All rights reserved"
 }
 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1747,4 +1752,5 @@ theCoda =
 \score { \new Staff \with {instrumentName = "Cello"} {\mark "messenger arrives" \development_cello} \layout {} }
 \score { \new Staff \with {instrumentName = "Cello"} {\mark "nuntium calamitosum" \recap_cello} \layout {} }
 \score { \new Staff \with {instrumentName = "Cello"} {\mark "amor fati" \coda_cello} \layout {} }
+
 
