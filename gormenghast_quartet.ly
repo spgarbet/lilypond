@@ -638,9 +638,9 @@ development_violin_i = \relative c
 
   cis2.-^\>( |
   gis2.) |
-  dis4.( cis |
+  dis8->( dis4 cis8-> cis4 |
   
-  bis4._\mp\!) r4 cis8\<( |
+  bis4.->_\mp\!) r4 cis8\<( |
   dis8 cis dis cis dis e |
   gis2.\!\fermata)--_\f \bar "|." 
 
