@@ -47,18 +47,18 @@ harmony = \chordmode
   b1:dim7/f
   b1:dim7/f % Melody starts as pickup
 
-  e1
-  e1
+  e1:m
+  e1:m
   b1:dim7/f
   b1:dim7/f 
 
   % This or sequential?
-  e2 b2:dim/f |
-  c4 g4/d  a4:m e4/b |
+  e2:m b2:dim/f |
+  c4 g4/d  a4:m e4:m/b |
   
   % Cadential (timing?)
-  e4:/g c4 f4/a b4:dim
-  e1
+  e4:m/g c4 f4/a b4:dim
+  e1:m
   
 }
 
