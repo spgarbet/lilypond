@@ -29,7 +29,7 @@
 
 \header
 {
-  title      = "Bhairavi"
+  title      = "Unsaid"
   subtitle   = "Piano and Cello"
   composer   = "Shawn Garbett/Sadhana"
   arranger   = "Arr. by Shawn Garbett, Buffy Rhea"
@@ -39,22 +39,25 @@
 }
 
 % i II III iv v-dim VI vii <= Main chords
+% e F  G   a  b-dim C  d
 
 harmony = \chordmode
 {
-  e1
-  e1
-  e1
-  e1
+  % Intro
+  b1:dim7/f
+  b1:dim7/f % Melody starts as pickup
 
   e1
   e1
   b1:dim7/f
-  b1:dim7/f
-  b1:dim7
-  b1:dim7/a
+  b1:dim7/f 
 
-  r8 e4:/g c8 f4/a b:dim
+  % This or sequential?
+  e2 b2:dim/f |
+  c4 g4/d  a4:m e4/b |
+  
+  % Cadential (timing?)
+  e4:/g c4 f4/a b4:dim
   e1
   
 }
@@ -66,26 +69,17 @@ piano_treble =
   \clef treble 
   \time 4/4
 
+  r2. r8 f8 | 
+  d8 e~ e4 r8 g8 a8 b16 c |
+  b2 b4 b |
+  b2 r2 |
+  r4 <b d f>2\arpeggio \grace {b16} a8 b |
+  r4 g8 a r2 |
+
+  cis8( d b c b c4.)  |
+  g2 a4 b4 |
   r1 |
-  r1 % ga cde (?)
-  e''8 c d a c g a e |
-
-  r2. a,4 |
-  % First Theme (pick-up previous measure)
-  g16 a g g~ g8 f e4 c8 d |
-  e16 g f f e2 r4 | 
-
-  % Second Theme
-  r4. f8 a b a f |
-  r1 |
-
-  % Frag > b d f a
-  b8 b b16 c e d c8 b4 a16 g |
-  a4 g16 a g g r2 |
-
-  % Cadential
-  f8 e4 f8 e4 r4 |
-  r4 e2 r4 |
+  \grace {g16(} f2) e2 |
 }
 
 piano_bass = 
@@ -97,20 +91,17 @@ piano_bass =
 
   r1
   r1
-  r1
-  r1
+  <e b' e g>\arpeggio
+  <e b' e g>\arpeggio
+ 
+  b8( f'8 f,2.) |
+  b8( f'8 <b, f>2.)   |
+  
+  <e, b' e>2~ <e b' e>8 <f b f'>4. |
+  <c g'~ c>4 <d g d'>4 r8 <b' e g>4. |
 
-  <g' b>8. <g b>16~ <g b>4 <g b>2  |
-  <f a>4 <g b>2 r4 |
-
-  % Bdim7 / F -> f a b d
-  f8 b d r8 r2 |
-  d8 b f2 r4 |
-
-  b,8 f' a b d b a f |
-  a,8 d f a b d b a | 
-  r8 <b, e>4 <c e>8 <c f>4 r4 |
-  r4 <g e'>2 r4 |
+  <g e'>4 <c g'> <a f'> <b f'> |
+  <e, b' e g>1\arpeggio
 }
 
 cello = 
@@ -120,23 +111,18 @@ cello =
   \clef bass
   \time 4/4
 
-  b4 e e e,~ |
-  e1 |
-  e8 b'~ b2. |
-  e,8 b'~ b2. |
-  e,8 e' e e e e e e |
-  b8 e e,2 r4 |
 
-  % Second Theme
-  r8 d'8. d16 d8 d16 e d d c8 d |
-  e8 g f d e4 e8 e8 | 
-
-  % Third Theme 
-  r16 f f8 c' c b b b16 c e d |
-  c8 b4 a16 g a4 g16 a g g |
-
-  a8 g4 c,8 a4 b8 c |
-  e16 g f f e2 r4 |
+  b8( f'8 f,2.) |
+  b8( f'8 <b, f>2.) |
+  b8( e8 e,2.) |
+  b'8( e8 <b e,>4) cis'8( d b c |
+  b8 c4.) r2 | 
+  r2 b,16 c d e~ e8 g8 |
+  <e' b>2 b4 b |
+  ais8( b g a c b4.) |
+  c8( b16 a g4) e16( g a b a4) |
+  b,8( e8 <b e,>2.) |
+  
 }
 
 piece = 
