@@ -7,6 +7,82 @@
        (interpret-markup layout props arg)
        empty-stencil))
 
+% https://music.stackexchange.com/questions/130813/offset-note-head-position-horizontaly
+#(define (which lst)
+   (define (impl lst count)
+     (if (null? lst)
+         #f
+         (if (car lst)
+             count
+             (impl (cdr lst) (1+ count)))))
+   (impl lst 0))
+
+
+#(define (custom_accidental_placement_engraver context)
+   (define (grob-array->list x)
+     (if (ly:grob-array? x)
+         (ly:grob-array->list x)
+         '()))
+   (let ((placement #f) (right-padding #f))
+     (make-engraver
+      (acknowledgers
+       ((accidental-interface engraver grob source-engraver)
+        (if (assoc-get 'capture (ly:grob-property grob 'details) #f)
+            (begin
+              (if (not placement)
+                  (begin
+                   (set! placement (ly:engraver-make-grob engraver 'AccidentalPlacement '()))
+                   (ly:grob-set-parent! placement X (ly:grob-parent (ly:grob-parent grob Y) X))
+                   (let ((padding (ly:grob-property-data placement 'right-padding)))
+                     (set!
+                      right-padding
+                      (lambda (grob)
+                        (let* ((grobs (ly:grob-object grob 'accidental-grobs))
+                               (grobs (apply append (map cdr grobs)))
+                               (heads (map (lambda (x) (ly:grob-parent x Y)) grobs))
+                               (stems (map (lambda (x) (ly:grob-object x 'stem)) heads))
+                               (cols (map (lambda (x) (ly:grob-parent x X)) heads))
+                               (collisions (map (lambda (x) (ly:grob-parent x X)) cols))
+                               (cols2 (apply append
+                                             (map 
+                                              (lambda (x)
+                                                (grob-array->list (ly:grob-object x 'elements)))
+                                              collisions)))
+                               (heads2 (apply append
+                                              (map
+                                               (lambda (x)
+                                                 (grob-array->list (ly:grob-object x 'note-heads)))
+                                               cols2)))
+                               (stems2 (map (lambda (x) (ly:grob-object x 'stem)) heads))
+                               (grob-set1 (ly:grob-list->grob-array (append heads stems)))
+                               (grob-set2 (ly:grob-list->grob-array (append heads stems heads2 stems2)))
+                               (refp (ly:grob-common-refpoint-of-array grob grob-set1 X))
+                               (refp2 (ly:grob-common-refpoint-of-array grob grob-set2 X))
+                               (ext (ly:grob-extent refp refp2 X))
+                               (ext2 (ly:grob-extent refp2 refp2 X))
+                               (offset (car ext))
+                               (offset (- offset (car ext2))))
+                          (- (if (procedure? padding) (padding grob) padding) offset)))))))
+              (let* ((src-placement (ly:grob-parent grob X))
+                     (grobs (ly:grob-object src-placement 'accidental-grobs))
+                     (has-grob? (map (lambda (pair) (memq grob (cdr pair))) grobs))
+                     (pair (list-ref grobs (which has-grob?)))
+                     (notename (car pair))
+                     (groblist (cdr pair))
+                     (new-grobs (ly:grob-object placement 'accidental-grobs))
+                     (new-groblist (assoc-get notename new-grobs '()))
+                     (groblist (delete grob groblist eq?))
+                     (new-groblist (cons grob new-groblist))
+                     (grobs (assoc-set! grobs notename groblist))
+                     (new-grobs (assoc-set! new-grobs notename new-groblist)))
+                (if (not (ly:grob-property (ly:grob-parent (ly:grob-parent grob Y) X) 'ignore-collision #f))
+                    (ly:grob-set-property! placement 'right-padding right-padding))
+                (ly:grob-set-object! src-placement 'accidental-grobs grobs)
+                (ly:grob-set-object! placement 'accidental-grobs new-grobs)
+                (ly:grob-set-parent! grob X placement))))))
+      ((stop-translation-timestep engraver)
+       (set! placement #f)))))
+
 \paper
 {
   oddFooterMarkup =
@@ -412,7 +488,7 @@ exposition_cello = \relative c
   % Period
   \repeat volta 2{
 
-  b,16-^_\markup{\italic strepitoso}_\ff b b b-> b b b-> b b4-^ r4 \bar "!"
+  b16-^_\markup{\italic strepitoso}_\ff b b b-> b b b-> b b4-^ r4 \bar "!"
   b16-^ b b b-> b b b-> b b4-^ r4 \bar"!"
   cis16-^ cis cis cis-> cis cis cis-> cis cis4-^ r4 |
   
@@ -424,12 +500,12 @@ exposition_cello = \relative c
 
   % Subordinate Theme
 
-  b8_\mp_\markup{\italic {crescendo con moto}}_\< b' b, b' b, b' b, b' \bar "!"
-  b,8 b' b, b' b, b' b, b' \bar "!"
+  b8_\mp_\markup{\italic {crescendo con moto}}_\< fis' b, fis' b, fis' b, fis' \bar "!"
+  b,8 fis' b, fis' b, fis' b, fis' \bar "!"
   \tuplet 3/2 {a, a' a, a' a, a'} a,8-. r8 r4 |
 
-  b8 b' b, b' b, b' b, b' \bar "!"
-  b,8 b' b, b' b, b' b, b' \bar "!"
+  b8 fis' b, fis' b, fis' b, fis' \bar "!"
+  b,8 fis' b, fis' b, fis' b, fis' \bar "!"
   \tuplet 3/2 {a, a' a, a' a, a'} a,8-. r8 r4 |
 
   b8_\ff\!\> b' b, b' b, b' b, b' \bar "!"
@@ -443,7 +519,7 @@ exposition_cello = \relative c
   b, b' dis, b' cis, ais' e ais |
 
   b, b' dis, b' b, b' dis, b' \bar "!"
-  a fis' c fis a, fis' c fis \bar "!"
+  a, fis' c fis a, fis' c fis \bar "!"
   gis, e' b e a, fis' c fis |
 
   gis,\< e' b e gis, e' b e \bar "!"
@@ -1625,7 +1701,7 @@ coda_cello = \relative c
 
   r1 |
   r1 |
-  r2 g2_\fff--_\markup{NO} |
+  r2 << \new Voice { \voiceOne g2_\fff--_\markup{NO}} \new Voice { \voiceTwo \once \override NoteColumn.force-hshift = #1.1 \once \override NoteColumn.ignore-collision= ##t \once \override Accidental.details.capture = ##t gis2 } >> |
 
   r1 |
   r1 |
@@ -1716,7 +1792,14 @@ theCoda =
 \score
 {
   \theCoda
-  \layout {}
+  \layout {
+    \context {
+    \Voice
+    \consists #custom_accidental_placement_engraver
+    % Make NoteColumn use force-hshift even if ignore-collision is #t
+    \override NoteColumn.X-offset = #(lambda (grob) (ly:grob-property grob 'force-hshift 0))
+    }
+  }
 }
 
 \score
