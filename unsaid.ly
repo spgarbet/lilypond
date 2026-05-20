@@ -7,6 +7,9 @@
        (interpret-markup layout props arg)
        empty-stencil))
 
+% Uncomment to remove up and down bow
+% \omit Score.BarLine
+
 \paper
 {
   oddFooterMarkup =
@@ -31,7 +34,7 @@
 {
   title      = "Unsaid"
   subtitle   = "Piano and Cello"
-  composer   = "Shawn Garbett/Sadhana"
+  composer   = "Shawn Garbett"
   arranger   = "Arr. by Shawn Garbett, Buffy Rhea"
   tagline    = "Things Unsaid "
   midititle  = "unsaid.midi"
@@ -60,6 +63,22 @@ harmony = \chordmode
   e4:m/g c4 f4/a b4:dim
   e1:m
   
+  % Harmonic loosening
+  b1:dim/f 
+  b1:dim/f 
+
+  e1:m7/b
+  a1:7
+  d1:m7/a
+  g1
+
+  c2/e c2:7 
+  fis2.:dim b4:m/d 
+  c2/e c2:7 
+  fis2.:dim b4:m/d 
+  c2/e c2:7 
+  fis1:dim
+  
 }
 
 piano_treble = 
@@ -78,8 +97,27 @@ piano_treble =
 
   cis8( d b c b c4.)  |
   g2 a4 b4 |
-  r1 |
+  <g b>4 <e g> <a c> <d, f> | 
   \grace {g16(} f2) e2 |
+
+  f2 f4 f4 |
+  f2 r2 |
+
+  gis8( a f g f g4.)  |
+  e2 f4 g |
+
+  fis8( g e f e f4.)  |
+  d2 e4 f |
+
+  \bar "||" \key g \major
+  g2 g4 g |
+  fis2 r2 |
+
+  c8( e8 <e, c'>2.) |
+  c'8( fis8 <fis, c'>2) b4 |
+
+  <e g c>2 <e g b>2 |
+  <fis c' a>1 |
 }
 
 piano_bass = 
@@ -102,6 +140,27 @@ piano_bass =
 
   <g e'>4 <c g'> <a f'> <b f'> |
   <e, b' e g>1\arpeggio
+
+
+  % Harmonic Loosening
+  <f b d f>1\arpeggio
+  <f b d f>1\arpeggio
+
+  <b d g>2~ <b d g>8 <b e g>4. |
+  <a e' g>2 r8 <c g' a>4. |
+  <a c f>2~ <a c f>8 <a d f>4. |
+  <g d' g>2 r8 <b g'>4. |
+
+  \bar "||" \key g \major
+  <e, g c>2\arpeggio b'2 |
+  <fis c'>2 r2 |
+ 
+  \ottava -1
+  c,2\startTrillSpan b |
+  fis'2\stopTrillSpan r2 |
+  \ottava 0
+  <e'' c'>2 <c g'>2 |
+  <fis c'>1 |
 }
 
 cello = 
@@ -117,12 +176,30 @@ cello =
   b8( e8 e,2.) |
   b'8( e8 <b e,>4) cis'8( d b c |
   b8 c4.) r2 | 
-  r2 b,16 c d e~ e8 g8 |
-  <e' b>2 b4 b |
-  ais8( b g a c b4.) |
-  c8( b16 a g4) e16( g a b a4) |
-  b,8( e8 <b e,>2.) |
-  
+  r2 b,16\downbow c d e~ e8 g8\upbow |
+  <e' b>2\downbow b4\upbow b\upbow |
+  ais8(\downbow b g\upbow a c\downbow b4.)\upbow |
+  c8(\downbow b16 a g4)\upbow d16(\downbow g a b a4)\upbow |
+  b,8(\downbow e8\upbow <b e,>2.)\downbow |
+
+  % Harmonic Loosening
+  b8( f'8 f,2.) |
+  b8( f'8 <b, f>4) f16 g a b~ b8 d8 |
+  <b e>2 b4 b |
+  fis8( g e f e f4) c'8 |
+  <a d>2 a4 a |
+
+  ais8(  b  g a g a4.) |
+  %f8( fis d e d e4.) |
+
+  \bar "||" \key g \major
+
+  c8( e8 e,2.) |
+  c'8( fis8 fis,2) b4 |
+  c8( e8 <e, c'>2.) |
+  c'8( fis8 <fis, c'>2) b4 |
+  <e c'>2-> <c g'>2-> |
+  fis,8 fis' fis, fis' fis, fis' fis, fis' |
 }
 
 piece = 
