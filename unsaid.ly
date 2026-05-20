@@ -83,7 +83,7 @@ harmony = \chordmode
 
 piano_treble = 
 {
-  \tempo "Andante" 4=90
+  \tempo "Largo" 4=50
   \key c \major
   \clef treble 
   \time 4/4
@@ -114,7 +114,7 @@ piano_treble =
   fis2 r2 |
 
   c8( e8 <e, c'>2.) |
-  c'8( fis8 <fis, c'>2) b4 |
+  c'8( fis8 <fis, c'>2) fis'4 |
 
   <e g c>2 <e g b>2 |
   <fis c' a>1 |
@@ -122,7 +122,7 @@ piano_treble =
 
 piano_bass = 
 {
-  \tempo "Andante" 4=90
+  \tempo "Largo" 4=50
   \key c \major
   \clef bass
   \time 4/4
@@ -157,15 +157,15 @@ piano_bass =
  
   \ottava -1
   c,2\startTrillSpan b |
-  fis'2\stopTrillSpan r2 |
+  fis'2\stopTrillSpan r4 <b fis>4 |
   \ottava 0
-  <e'' c'>2 <c g'>2 |
-  <fis c'>1 |
+  <e' c'>2 <c g'>2 |
+  <c fis>1 |
 }
 
 cello = 
 {
-  \tempo "Andante" 4=90
+  \tempo "Largo" 4=50
   \key c \major
   \clef bass
   \time 4/4
@@ -196,8 +196,8 @@ cello =
 
   c8( e8 e,2.) |
   c'8( fis8 fis,2) b4 |
-  c8( e8 <e, c'>2.) |
-  c'8( fis8 <fis, c'>2) b4 |
+  g2 g4 g |
+  fis2. d'4 |
   <e c'>2-> <c g'>2-> |
   fis,8 fis' fis, fis' fis, fis' fis, fis' |
 }
