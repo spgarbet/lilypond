@@ -72,11 +72,11 @@ harmony = \chordmode
   d1:m7/a
   g1
 
-  c2/e c2:7 
+  c2:aug/e c2:7 
   fis2.:dim b4:m/d 
-  c2/e c2:7 
+  c2:aug/e c2:7 
   fis2.:dim b4:m/d 
-  c2/e c2:7 
+  c2:aug/e c2:7 
   fis1:dim
   
 }
@@ -110,13 +110,13 @@ piano_treble =
   d2 e4 f |
 
   \bar "||" \key g \major
-  g2 g4 g |
+  gis2 g4 g |
   fis2 r2 |
 
   c8( e8 <e, c'>2.) |
   c'8( fis8 <fis, c'>2) fis'4 |
 
-  <e g c>2 <e g b>2 |
+  <e gis c>2 <e g b>2 |
   <fis c' a>1 |
 }
 
@@ -152,14 +152,14 @@ piano_bass =
   <g d' g>2 r8 <b g'>4. |
 
   \bar "||" \key g \major
-  <e, g c>2\arpeggio b'2 |
+  <e, gis c>2\arpeggio <b' c,>2 |
   <fis c'>2 r2 |
  
   \ottava -1
   c,2\startTrillSpan b |
-  fis'2\stopTrillSpan r4 <b fis>4 |
+  fis'2\stopTrillSpan r4 <b fis'>4 |
   \ottava 0
-  <e' c'>2 <c g'>2 |
+  <gis'' e>2 <c, g'>2 |
   <c fis>1 |
 }
 
@@ -196,7 +196,7 @@ cello =
 
   c8( e8 e,2.) |
   c'8( fis8 fis,2) b4 |
-  g2 g4 g |
+  gis2 g4 g |
   fis2. d'4 |
   <e c'>2-> <c g'>2-> |
   fis,8 fis' fis, fis' fis, fis' fis, fis' |
