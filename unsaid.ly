@@ -78,6 +78,8 @@ harmony = \chordmode
   fis2.:dim b4:m/d 
   c2:aug/e c2:7 
   fis1:dim
+
+  b1:m/fis
   
 }
 
