@@ -108,7 +108,7 @@ harmony = \chordmode
 
 piano_treble = 
 {
-  \tempo "Largo" 4=50
+  \tempo "Adagio ma non troppo" 4=60
   \key c \major
   \clef treble 
   \time 4/4
@@ -158,14 +158,15 @@ piano_treble =
   <b d fis>2\arpeggio <g c e>\fermata |
 
   % Cadential
-  r2 <fis b>4-. <fis b>-. |
+  r2 <fis b>4-. <b d>-. |
   <g c>2 r2 |
   r4 r16 <fis a> r <fis a> r2 |
   <fis a>4. <a c> <c e>4 |
 
-  r2 <fis b>8-. <d fis>-. <b d>-. <fis b>-. |
+  %r2 <fis b>8-. <d fis>-. <b d>-. <fis b>-. |
+  r2 <fis, b>8-. <b d>-. <d fis>-. <fis b>-. |
   <g c e>2 r2 |
-  r4 r16 <fis a c> r <fis a c> r <fis a c>8. r4 |
+  r4 r16 <fis, a c> r <fis a c> r <fis a c>8. r4 |
   <fis a>4 <a c>8 <c e>4 <a c>8 <c e>4 |
 
   r4 <fis, b d fis>2.\arpeggio \bar "|."
@@ -173,7 +174,7 @@ piano_treble =
 
 piano_bass = 
 {
-  \tempo "Largo" 4=50
+  \tempo "Adagio ma non troppo" 4=60
   \key c \major
   \clef bass
   \time 4/4
@@ -224,14 +225,14 @@ piano_bass =
   <b' fis'>2\arpeggio  <c g'>2\fermata |
 
   % Cadential
-  r2_\markup{\italic {accelerando}}  <d b'>4-. <d b'>4-. |
-  <e c'>2 r2 |
-  r4 r16 c-. r c-. r2 |
+  <d, d'>2-^_\markup{\italic {accelerando}}  <d' b'>4-. <d b'>4-. |
+  <e c'>8. <c' d>16-. r8 <c d>16-. r8 <c d>16-. r8 <c d> 16-. r8. |
+  r4 r16 c,-. r c-. r2 |
   <e fis>4. <fis a>4. <a c>4 |
 
-  r2  <d, b'>4-. <d b'>4-. |
-  <e c'>2 r2 |
-  r4 r16 c-._\f r c-. r c8. r4 |
+  <d,, d'>2-^  <d' b'>4-. <d b'>4-. |
+  <e c'>8. <c' d>16-. r8 <c d>16-. r8 <c d>16-. r8 <c d> 16-. r8. |
+  r4 r16 c,-._\f r c-. r c8. r4 |
   <e fis>4.\mf_\markup{\italic {a tempo}} <fis a>4. <a c>4 |
 
   <b, fis'>1 \bar "|."
@@ -239,10 +240,10 @@ piano_bass =
 
 cello = 
 {
-  \tempo "Largo" 4=50
   \key c \major
   \clef bass
   \time 4/4
+  \tempo "Adagio ma non troppo" 4=60
 
   b8(^\markup{\italic {feroce con calando}} f'8 f,2.) |
   b8( f'8 <b, f>2.) |
@@ -282,7 +283,7 @@ cello =
   b8(\< c a' b)\! \grace {a8(} g4\> fis) |
   b4\! d b e |
   \grace {d8(} c8) r8 r2. |
-  \repeat tremolo 8 {fis,16\>_\markup{\italic vib.}} e4\! r |
+  \after 16 \< \after 4 \! \after 4.\> \repeat tremolo 16 {fis,32}  e4\! r |
   a8(-> fis16 e d4) b16( d e fis) e4 |
   \grace {d8(} c4) r b2 |
 
@@ -290,13 +291,13 @@ cello =
   \grace {g8(} fis4) r e2\fermata |
 
   % Cadential
-  r8 e'16_\fff(\< g-^  fis e fis e  d-> e d c      d-> c b c\! | 
-  b16\>-^ a b a  g a g fis    g fis e fis  e d e d\! |
+  r8 e'16_\fff(\> g-^  fis e fis e  d-> e d c      d-> c b c | 
+  b16-^ a b a  g a g fis    g fis e fis  e d e d\! |
   \tuplet 3/2 {c16\< d c d c d)\!}  r c-. r c-. r c-. fis,8~-> fis r |
-  a16( c d e   d8) c16( e  fis16 g fis8)  e16( g a b) |
+  a16(\< c d e   d8) c16( e  fis16 g fis8)  e16( g a b)\! |
 
-  r8 c16(\< g'-^  fis e fis e  d-> e d c      d-> c b c\! | 
-  b16\> a b a  g a g fis    g fis e fis  \tuplet 3/2 {e d e d e d\!} |
+  r8 c16(\> g'-^  fis e fis e  d-> e d c      d-> c b c | 
+  b16 a b a  g a g fis    g fis e fis  \tuplet 3/2 {e d e d e d\!} |
   c16 d c d)  r c-. r c-. r c-. fis,8~-> fis r |
   a16(\< c d e   d8) c16( e  fis16 g fis8)  e16( g a b)\! |
  
