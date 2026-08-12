@@ -32,7 +32,7 @@
 
 \header
 {
-  title      = "Unsaid"
+  title      = "Sheltered"
   subtitle   = "Piano and Cello"
   composer   = "Shawn Garbett, Buffy Rhea"
   tagline    = "Things Unsaid "
@@ -335,3 +335,112 @@ piece =
   \unfoldRepeats { \piece }
   \midi {} 
 } 
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %
+%  DEVELOPMENT
+%
+roopam =
+{
+  \once \override Staff.TimeSignature.stencil = #ly:text-interface::print
+  \once \override Staff.TimeSignature.text =
+    \markup \override #'(baseline-skip . 0) \center-column \number {
+      \concat  {"8" \magnify #0.5 \pad-x #-.2 {
+                                 \translate #'(0 . 1) "1" 
+                                 \translate #'(-1 . 0) \override #'(thickness . 2) \draw-line #'(1 . 2) 
+                                 \translate #'(0 . 0) "2" }} "8" }
+   \time 17/16
+}
+
+dev_harmony = \chordmode
+{
+  e1 e16 |  
+  e1 e16 | 
+  e1 e16 |
+ 
+  f1 f16 |
+  f1 f16 | 
+  f1 f16 |
+}
+
+dev_piano_treble =
+{
+  \key c \major
+  \clef treble
+  \roopam
+  \tempo "Allegro 'roopam'" 8=150
+  \set Timing.beatStructure = 4,6,4,3
+
+  r8 \ottava 2 <e''' f g a b>\arpeggio r <e f g a b>\arpeggio <e f g a b>\arpeggio
+    r <e f g a b>\arpeggio r16 <e f g a b>\arpeggio <e f g a b>\arpeggio |
+  r8 <e f g a b>\arpeggio r <e f g a b>\arpeggio <e f g a b>\arpeggio
+    r <e f g a b>\arpeggio r16 <e f g a b>\arpeggio <e f g a b>\arpeggio |
+  r8 <e f g a b>\arpeggio r <e f g a b>\arpeggio <e f g a b>\arpeggio
+    r <e f g a b>\arpeggio r16 <e f g a b>\arpeggio <e f g a b>\arpeggio |
+
+  r8 <f g a b c>\arpeggio r <f g a b c>\arpeggio <f g a b c>\arpeggio
+    r <f g a b c>\arpeggio r16 <f g a b c>\arpeggio <f g a b c>\arpeggio |
+  r8 <f g a b c>\arpeggio r <f g a b c>\arpeggio <f g a b c>\arpeggio
+    r <f g a b c>\arpeggio r16 <f g a b c>\arpeggio <f g a b c>\arpeggio |
+  r8 <f g a b c>\arpeggio r <f g a b c>\arpeggio <f g a b c>\arpeggio
+    r <f g a b c>\arpeggio r16 <f g a b c>\arpeggio <f g a b c>\arpeggio |
+}
+
+dev_piano_bass = 
+{
+  \key c \major
+  \clef bass
+  \roopam
+  \set Timing.beatStructure = 4,6,4,3
+
+  <e, b' f'>8 b' <e, b' f'> <e f'> b' f' b, a16 g f |
+  <e b' f'>8 b' <e, b' f'> <e f'> b' f' b, a16 g f |
+  <e b' f'>8 b' <e, b' f'> <e f'> b' f' b, b16 a g |
+
+  <f c' g'>8 c' <f, c' g'> <f g'> c' g' c, b16 a g |
+  <f c' g'>8 c' <f, c' g'> <f g'> c' g' c, b16 a g |
+  <f c' g'>8 c' <f, c' g'> <f g'> c' g' c, b16 a g |
+}
+
+dev_cello = 
+{
+  \key c \major
+  \clef bass
+  \roopam
+  \set Timing.beatStructure = 4,6,4,3
+
+  f8-^_\markup{\italic{strum bowing}} f d-> d d e e e16-> e e |
+  g8-^ g a8-> a a b b c16-> c c |
+  b8-^ b b-> b b r b b16-> b b 
+
+  g8-^ g e-> e e f f f16-> f f |
+  a8-^ a b8-> b b c c d16-> d d |
+  c8-^ c c-> c c r c c16-> c c 
+}
+
+development = 
+{ 
+  <<
+    \new ChordNames 
+    {
+      \set chordChanges = ##t
+      \set noChordSymbol = ""
+      \set minorChordModifier = \markup { \char ##x2013 }
+      \dev_harmony
+    }
+    \new PianoStaff \with {instrumentName = "Piano"}
+    <<
+      \set PianoStaff.connectArpeggios = ##t
+      \new Staff = "Upper" \relative c' \dev_piano_treble
+      \new Staff = "Lower" \relative c  \dev_piano_bass 
+    >>  
+    \new Staff \with {instrumentName =  "Cello"} \relative c \dev_cello
+  >>
+}
+
+
+\score
+{
+  \development 
+  \layout {}
+}
